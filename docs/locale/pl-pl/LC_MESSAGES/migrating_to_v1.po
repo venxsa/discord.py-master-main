@@ -1,0 +1,2080 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: discordpy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-21 01:17+0000\n"
+"PO-Revision-Date: 2024-04-17 02:43\n"
+"Last-Translator: \n"
+"Language-Team: Polish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Crowdin-Project: discordpy\n"
+"X-Crowdin-Project-ID: 362783\n"
+"X-Crowdin-Language: pl\n"
+"X-Crowdin-File: migrating_to_v1.pot\n"
+"X-Crowdin-File-ID: 92\n"
+"Language: pl_PL\n"
+
+#: ../../migrating_to_v1.rst:8
+msgid "Migrating to v1.0"
+msgstr "Migracja do wersji 1.0"
+
+#: ../../migrating_to_v1.rst:10
+msgid "v1.0 is one of the biggest breaking changes in the library due to a complete redesign."
+msgstr "Wersja 1.0 to jedna z największych zmian wprowadzających niekompatybilność w bibliotece, wynikająca z jej kompletnego przeprojektowania."
+
+#: ../../migrating_to_v1.rst:13
+msgid "The amount of changes are so massive and long that for all intents and purposes, it is a completely new library."
+msgstr "Liczba zmian jest tak ogromna i rozległa, że w praktyce można ją uznać za zupełnie nową bibliotekę."
+
+#: ../../migrating_to_v1.rst:16
+msgid "Part of the redesign involves making things more easy to use and natural. Things are done on the :ref:`models <discord_api_models>` instead of requiring a :class:`Client` instance to do any work."
+msgstr "Część przeprojektowania polegała na uczynieniu biblioteki łatwiejszą w użyciu i bardziej naturalną. Wiele operacji wykonuje się teraz bezpośrednio na :ref:`modelach <discord_api_models>`, zamiast wymagać instancji :class:`Client` do wykonania jakiejkolwiek pracy."
+
+#: ../../migrating_to_v1.rst:20
+msgid "Python Version Change"
+msgstr "Zmiana wersji Pythona"
+
+#: ../../migrating_to_v1.rst:22
+msgid "In order to make development easier and also to allow for our dependencies to upgrade to allow usage of 3.7 or higher, the library had to remove support for Python versions lower than 3.5.3, which essentially means that **support for Python 3.4 is dropped**."
+msgstr "Aby ułatwić rozwój biblioteki i pozwolić na aktualizację zależności (wymagających Pythona 3.7 lub nowszego), konieczne było usunięcie wsparcia dla wersji Pythona starszych niż 3.5.3. Oznacza to, że **wsparcie dla Pythona 3.4 zostało zakończone**."
+
+#: ../../migrating_to_v1.rst:27
+msgid "Major Model Changes"
+msgstr "Główne zmiany w modelach"
+
+#: ../../migrating_to_v1.rst:29
+msgid "Below are major model changes that have happened in v1.0"
+msgstr "Poniżej znajdują się główne zmiany w modelach wprowadzone w wersji 1.0"
+
+#: ../../migrating_to_v1.rst:32
+msgid "Snowflakes are int"
+msgstr "Płatki śniegu (Snowflakes) to teraz int"
+
+#: ../../migrating_to_v1.rst:34
+msgid "Before v1.0, all snowflakes (the ``id`` attribute) were strings. This has been changed to :class:`int`."
+msgstr "Przed wersją 1.0 wszystkie płatki śniegu (atrybut ``id``) były ciągami znaków (strings). Zostało to zmienione na :class:`int`."
+
+#: ../../migrating_to_v1.rst:36
+#: ../../migrating_to_v1.rst:256
+msgid "Quick example: ::"
+msgstr "Szybki przykład: ::"
+
+#: ../../migrating_to_v1.rst:48
+msgid "This change allows for fewer errors when using the Copy ID feature in the official client since you no longer have to wrap it in quotes and allows for optimisation opportunities by allowing ETF to be used instead of JSON internally."
+msgstr "Ta zmiana pozwala uniknąć błędów przy korzystaniu z funkcji „Kopiuj ID” w oficjalnym kliencie, ponieważ nie trzeba już ujmować go w cudzysłów. Umożliwia również optymalizację dzięki wykorzystaniu formatu ETF zamiast JSON pod maską."
+
+#: ../../migrating_to_v1.rst:52
+msgid "Server is now Guild"
+msgstr "Server to teraz Guild"
+
+#: ../../migrating_to_v1.rst:54
+msgid "The official API documentation calls the \"Server\" concept a \"Guild\" instead. In order to be more consistent with the API documentation when necessary, the model has been renamed to :class:`Guild` and all instances referring to it has been changed as well."
+msgstr "Oficjalna dokumentacja API określa koncepcję „Serwera” jako „Gildię” (Guild). Aby zachować większą zgodność z dokumentacją API, model został przemianowany na :class:`Guild`, a wszystkie odniesienia do niego zostały odpowiednio zaktualizowane."
+
+#: ../../migrating_to_v1.rst:58
+msgid "A list of changes is as follows:"
+msgstr "Lista zmian prezentuje się następująco:"
+
+#: ../../migrating_to_v1.rst:61
+#: ../../migrating_to_v1.rst:97
+#: ../../migrating_to_v1.rst:871
+msgid "Before"
+msgstr "Przed"
+
+#: ../../migrating_to_v1.rst:61
+#: ../../migrating_to_v1.rst:97
+#: ../../migrating_to_v1.rst:871
+msgid "After"
+msgstr "Po"
+
+#: ../../migrating_to_v1.rst:63
+msgid "``Message.server``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:63
+msgid ":attr:`Message.guild`"
+msgstr ":attr:`Message.guild`"
+
+#: ../../migrating_to_v1.rst:65
+msgid "``Channel.server``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:65
+msgid ":attr:`.GuildChannel.guild`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:67
+msgid "``Client.servers``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:67
+#: ../../migrating_to_v1.rst:235
+msgid ":attr:`Client.guilds`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:67
+#: ../../migrating_to_v1.rst:331
+msgid "``Client.servers`` is now :attr:`Client.guilds`."
+msgstr "``Client.servers`` to teraz :attr:`Client.guilds`."
+
+#: ../../migrating_to_v1.rst:69
+msgid "``Client.get_server``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:69
+msgid ":meth:`Client.get_guild`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:71
+msgid "``Emoji.server``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:71
+msgid ":attr:`Emoji.guild`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:73
+msgid "``Role.server``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:73
+msgid ":attr:`Role.guild`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:75
+msgid "``Invite.server``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:75
+msgid ":attr:`Invite.guild`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:77
+msgid "``Member.server``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:77
+msgid ":attr:`Member.guild`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:79
+msgid "``Permissions.manage_server``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:79
+msgid ":attr:`Permissions.manage_guild`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:81
+msgid "``VoiceClient.server``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:81
+msgid ":attr:`VoiceClient.guild`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:83
+msgid "``Client.create_server``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:83
+msgid ":meth:`Client.create_guild`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:89
+msgid "Models are Stateful"
+msgstr "Modele są stanowe (Stateful)"
+
+#: ../../migrating_to_v1.rst:91
+msgid "As mentioned earlier, a lot of functionality was moved out of :class:`Client` and put into their respective :ref:`model <discord_api_models>`."
+msgstr "Jak wspomniano wcześniej, wiele funkcjonalności zostało przeniesionych z klasy :class:`Client` do odpowiednich :ref:`modeli <discord_api_models>`."
+
+#: ../../migrating_to_v1.rst:94
+msgid "A list of these changes is enumerated below."
+msgstr "Lista tych zmian została wyszczególniona poniżej."
+
+#: ../../migrating_to_v1.rst:99
+msgid "``Client.add_reaction``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:99
+msgid ":meth:`Message.add_reaction`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:101
+msgid "``Client.add_roles``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:101
+msgid ":meth:`Member.add_roles`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:103
+msgid "``Client.ban``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:103
+msgid ":meth:`Member.ban` or :meth:`Guild.ban`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:105
+msgid "``Client.change_nickname``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:105
+#: ../../migrating_to_v1.rst:173
+#: ../../migrating_to_v1.rst:189
+#: ../../migrating_to_v1.rst:197
+msgid ":meth:`Member.edit`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:107
+msgid "``Client.clear_reactions``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:107
+msgid ":meth:`Message.clear_reactions`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:109
+msgid "``Client.create_channel``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:109
+msgid ":meth:`Guild.create_text_channel` and :meth:`Guild.create_voice_channel`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:111
+msgid "``Client.create_custom_emoji``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:111
+msgid ":meth:`Guild.create_custom_emoji`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:113
+msgid "``Client.create_invite``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:113
+msgid ":meth:`abc.GuildChannel.create_invite`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:115
+msgid "``Client.create_role``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:115
+msgid ":meth:`Guild.create_role`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:117
+msgid "``Client.delete_channel``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:117
+msgid ":meth:`abc.GuildChannel.delete`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:119
+msgid "``Client.delete_channel_permissions``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:119
+msgid ":meth:`abc.GuildChannel.set_permissions` with ``overwrite`` set to ``None``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:121
+msgid "``Client.delete_custom_emoji``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:121
+msgid ":meth:`Emoji.delete`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:123
+msgid "``Client.delete_invite``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:123
+msgid ":meth:`Invite.delete` or :meth:`Client.delete_invite`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:125
+msgid "``Client.delete_message``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:125
+msgid ":meth:`Message.delete`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:127
+msgid "``Client.delete_messages``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:127
+msgid ":meth:`TextChannel.delete_messages`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:129
+msgid "``Client.delete_role``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:129
+msgid ":meth:`Role.delete`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:131
+msgid "``Client.delete_server``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:131
+msgid ":meth:`Guild.delete`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:133
+msgid "``Client.edit_channel``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:133
+#: ../../migrating_to_v1.rst:171
+msgid ":meth:`TextChannel.edit` or :meth:`VoiceChannel.edit`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:135
+msgid "``Client.edit_channel_permissions``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:135
+msgid ":meth:`abc.GuildChannel.set_permissions`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:137
+msgid "``Client.edit_custom_emoji``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:137
+msgid ":meth:`Emoji.edit`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:139
+msgid "``Client.edit_message``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:139
+msgid ":meth:`Message.edit`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:141
+msgid "``Client.edit_profile``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:141
+msgid ":meth:`ClientUser.edit` (you get this from :attr:`Client.user`)"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:143
+msgid "``Client.edit_role``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:143
+#: ../../migrating_to_v1.rst:175
+msgid ":meth:`Role.edit`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:145
+msgid "``Client.edit_server``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:145
+msgid ":meth:`Guild.edit`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:147
+msgid "``Client.estimate_pruned_members``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:147
+msgid ":meth:`Guild.estimate_pruned_members`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:149
+#: ../../migrating_to_v1.rst:329
+msgid "``Client.get_all_emojis``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:149
+msgid ":attr:`Client.emojis`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:151
+msgid "``Client.get_bans``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:151
+msgid ":meth:`Guild.bans`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:153
+msgid "``Client.get_invite``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:153
+msgid ":meth:`Client.fetch_invite`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:155
+msgid "``Client.get_message``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:155
+msgid ":meth:`abc.Messageable.fetch_message`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:157
+msgid "``Client.get_reaction_users``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:157
+#: ../../migrating_to_v1.rst:495
+msgid ":meth:`Reaction.users`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:159
+msgid "``Client.get_user_info``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:159
+msgid ":meth:`Client.fetch_user`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:161
+msgid "``Client.invites_from``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:161
+msgid ":meth:`abc.GuildChannel.invites` or :meth:`Guild.invites`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:163
+msgid "``Client.join_voice_channel``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:163
+msgid ":meth:`VoiceChannel.connect` (see :ref:`migrating_1_0_voice`)"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:165
+msgid "``Client.kick``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:165
+msgid ":meth:`Guild.kick` or :meth:`Member.kick`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:167
+msgid "``Client.leave_server``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:167
+msgid ":meth:`Guild.leave`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:169
+msgid "``Client.logs_from``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:169
+msgid ":meth:`abc.Messageable.history` (see :ref:`migrating_1_0_async_iter`)"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:171
+msgid "``Client.move_channel``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:173
+msgid "``Client.move_member``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:175
+msgid "``Client.move_role``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:177
+msgid "``Client.pin_message``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:177
+msgid ":meth:`Message.pin`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:179
+msgid "``Client.pins_from``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:179
+msgid ":meth:`abc.Messageable.pins`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:181
+msgid "``Client.prune_members``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:181
+msgid ":meth:`Guild.prune_members`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:183
+msgid "``Client.purge_from``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:183
+msgid ":meth:`TextChannel.purge`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:185
+msgid "``Client.remove_reaction``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:185
+msgid ":meth:`Message.remove_reaction`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:187
+msgid "``Client.remove_roles``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:187
+msgid ":meth:`Member.remove_roles`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:189
+msgid "``Client.replace_roles``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:191
+msgid "``Client.send_file``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:191
+#: ../../migrating_to_v1.rst:193
+msgid ":meth:`abc.Messageable.send` (see :ref:`migrating_1_0_sending_messages`)"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:193
+msgid "``Client.send_message``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:195
+msgid "``Client.send_typing``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:195
+msgid ":meth:`abc.Messageable.trigger_typing` (use :meth:`abc.Messageable.typing`)"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:197
+msgid "``Client.server_voice_state``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:199
+msgid "``Client.start_private_message``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:199
+msgid ":meth:`User.create_dm`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:201
+msgid "``Client.unban``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:201
+msgid ":meth:`Guild.unban` or :meth:`Member.unban`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:203
+msgid "``Client.unpin_message``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:203
+msgid ":meth:`Message.unpin`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:205
+msgid "``Client.wait_for_message``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:205
+#: ../../migrating_to_v1.rst:207
+msgid ":meth:`Client.wait_for` (see :ref:`migrating_1_0_wait_for`)"
+msgstr ":meth:`Client.wait_for` (zobacz :ref:`migrating_1_0_wait_for`)"
+
+#: ../../migrating_to_v1.rst:207
+msgid "``Client.wait_for_reaction``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:209
+msgid "``Client.wait_until_login``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:209
+msgid "Removed"
+msgstr "Usunięto"
+
+#: ../../migrating_to_v1.rst:211
+msgid "``Client.wait_until_ready``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:211
+msgid "No change"
+msgstr "Bez zmian"
+
+#: ../../migrating_to_v1.rst:215
+msgid "Property Changes"
+msgstr "Zmiany właściwości (Property Changes)"
+
+#: ../../migrating_to_v1.rst:217
+msgid "In order to be a bit more consistent, certain things that were properties were changed to methods instead."
+msgstr "W celu zachowania spójności, niektóre elementy, które były właściwościami (properties), zostały zmienione na metody."
+
+#: ../../migrating_to_v1.rst:219
+msgid "The following are now methods instead of properties (requires parentheses):"
+msgstr "Następujące elementy są teraz metodami zamiast właściwościami (wymagają nawiasów):"
+
+#: ../../migrating_to_v1.rst:221
+msgid ":meth:`Role.is_default`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:222
+msgid ":meth:`Client.is_ready`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:223
+msgid ":meth:`Client.is_closed`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:226
+msgid "Dict Value Change"
+msgstr "Zmiana wartości słowników (Dict Value Change)"
+
+#: ../../migrating_to_v1.rst:228
+msgid "Prior to v1.0 some aggregating properties that retrieved models would return \"dict view\" objects."
+msgstr "Przed wersją 1.0 niektóre właściwości agregujące, które pobierały modele, zwracały obiekty typu „dict view”."
+
+#: ../../migrating_to_v1.rst:230
+msgid "As a consequence, when the dict would change size while you would iterate over it, a RuntimeError would be raised and crash the task. To alleviate this, the \"dict view\" objects were changed into lists."
+msgstr "W rezultacie, gdy rozmiar słownika zmieniał się podczas iteracji, zgłaszany był błąd RuntimeError, co powodowało przerwanie zadania. Aby temu zapobiec, obiekty „dict view” zostały zmienione na listy."
+
+#: ../../migrating_to_v1.rst:233
+msgid "The following views were changed to a list:"
+msgstr "Następujące widoki zostały zmienione na listy:"
+
+#: ../../migrating_to_v1.rst:236
+msgid ":attr:`Client.users` (new in v1.0)"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:237
+msgid ":attr:`Client.emojis` (new in v1.0)"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:238
+msgid ":attr:`Guild.channels`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:239
+msgid ":attr:`Guild.text_channels` (new in v1.0)"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:240
+msgid ":attr:`Guild.voice_channels` (new in v1.0)"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:241
+msgid ":attr:`Guild.emojis`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:242
+msgid ":attr:`Guild.members`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:245
+msgid "Voice State Changes"
+msgstr "Zmiany w stanach głosowych (Voice State Changes)"
+
+#: ../../migrating_to_v1.rst:247
+msgid "Earlier, in v0.11.0 a :class:`VoiceState` class was added to refer to voice states along with a :attr:`Member.voice` attribute to refer to it."
+msgstr "Wcześniej, w wersji 0.11.0, dodano klasę :class:`VoiceState` do obsługi stanów głosowych oraz atrybut :attr:`Member.voice` odnoszący się do nich."
+
+#: ../../migrating_to_v1.rst:250
+msgid "However, it was transparent to the user. In an effort to make the library save more memory, the voice state change is now more visible."
+msgstr "Jednak było to mało widoczne dla użytkownika. Aby zaoszczędzić pamięć, zmiany stanów głosowych są teraz bardziej jawne."
+
+#: ../../migrating_to_v1.rst:253
+msgid "The only way to access voice attributes is via the :attr:`Member.voice` attribute. Note that if the member does not have a voice state this attribute can be ``None``."
+msgstr "Jedynym sposobem na dostęp do atrybutów głosowych jest atrybut :attr:`Member.voice`. Pamiętaj, że jeśli członek nie ma stanu głosowego, ten atrybut może wynosić ``None``."
+
+#: ../../migrating_to_v1.rst:269
+msgid "User and Member Type Split"
+msgstr "Rozdzielenie typów User i Member"
+
+#: ../../migrating_to_v1.rst:271
+msgid "In v1.0 to save memory, :class:`User` and :class:`Member` are no longer inherited. Instead, they are \"flattened\" by having equivalent properties that map out to the functional underlying :class:`User`. Thus, there is no functional change in how they are used. However this breaks :func:`isinstance` checks and thus is something to keep in mind."
+msgstr "W wersji 1.0, aby zaoszczędzić pamięć, klasy :class:`User` i :class:`Member` nie dziedziczą już po sobie. Zamiast tego zostały „spłaszczone” poprzez posiadanie ekwiwalentnych właściwości mapujących do bazowego :class:`User`. Dzięki temu nie ma funkcjonalnej zmiany w sposobie ich użycia. Jednakże przerywa to działanie sprawdzeń :func:`isinstance`, o czym należy pamiętać."
+
+#: ../../migrating_to_v1.rst:275
+msgid "These memory savings were accomplished by having a global :class:`User` cache, and as a positive consequence you can now easily fetch a :class:`User` by their ID by using the new :meth:`Client.get_user`. You can also get a list of all :class:`User` your client can see with :attr:`Client.users`."
+msgstr "Te oszczędności pamięci zostały osiągnięte dzięki globalnemu cache :class:`User`, a pozytywnym skutkiem ubocznym jest możliwość łatwego pobrania :class:`User` po ID za pomocą nowej metody :meth:`Client.get_user`. Możesz również uzyskać listę wszystkich :class:`User` widocznych dla klienta poprzez :attr:`Client.users`."
+
+#: ../../migrating_to_v1.rst:282
+msgid "Channel Type Split"
+msgstr "Rozdzielenie typów kanałów"
+
+#: ../../migrating_to_v1.rst:284
+msgid "Prior to v1.0, channels were two different types, ``Channel`` and ``PrivateChannel`` with a ``is_private`` property to help differentiate between them."
+msgstr "Przed wersją 1.0 kanały dzieliły się na dwa typy: ``Channel`` i ``PrivateChannel``, z właściwością ``is_private`` pomagającą je rozróżnić."
+
+#: ../../migrating_to_v1.rst:287
+msgid "In order to save memory the channels have been split into 4 different types:"
+msgstr "W celu zaoszczędzenia pamięci kanały zostały rozdzielone na 4 różne typy:"
+
+#: ../../migrating_to_v1.rst:289
+msgid ":class:`TextChannel` for guild text channels."
+msgstr ":class:`TextChannel` dla tekstowych kanałów serwerowych."
+
+#: ../../migrating_to_v1.rst:290
+msgid ":class:`VoiceChannel` for guild voice channels."
+msgstr ":class:`VoiceChannel` dla głosowych kanałów serwerowych."
+
+#: ../../migrating_to_v1.rst:291
+msgid ":class:`DMChannel` for DM channels with members."
+msgstr ":class:`DMChannel` dla kanałów prywatnych (DM) z członkami."
+
+#: ../../migrating_to_v1.rst:292
+msgid ":class:`GroupChannel` for Group DM channels with members."
+msgstr ":class:`GroupChannel` dla kanałów grupowych (Group DM) z członkami."
+
+#: ../../migrating_to_v1.rst:294
+msgid "With this split came the removal of the ``is_private`` attribute. You should now use :func:`isinstance`."
+msgstr "Wraz z tym podziałem usunięto atrybut ``is_private``. Od teraz należy używać :func:`isinstance`."
+
+#: ../../migrating_to_v1.rst:296
+msgid "The types are split into two different :ref:`discord_api_abcs`:"
+msgstr "Typy te są rozdzielone na dwie różne :ref:`klasy bazowe (ABCs) <discord_api_abcs>`:"
+
+#: ../../migrating_to_v1.rst:298
+msgid ":class:`abc.GuildChannel` for guild channels."
+msgstr ":class:`abc.GuildChannel` dla kanałów serwerowych."
+
+#: ../../migrating_to_v1.rst:299
+msgid ":class:`abc.PrivateChannel` for private channels (DMs and group DMs)."
+msgstr ":class:`abc.PrivateChannel` dla kanałów prywatnych (DM i grupowe DM)."
+
+#: ../../migrating_to_v1.rst:301
+msgid "So to check if something is a guild channel you would do: ::"
+msgstr "Aby sprawdzić, czy coś jest kanałem serwerowym, należy użyć: ::"
+
+#: ../../migrating_to_v1.rst:305
+msgid "And to check if it's a private channel you would do: ::"
+msgstr "A żeby sprawdzić, czy to kanał prywatny, należy użyć: ::"
+
+#: ../../migrating_to_v1.rst:309
+msgid "Of course, if you're looking for only a specific type you can pass that too, e.g. ::"
+msgstr "Oczywiście, jeśli szukasz tylko konkretnego typu, możesz go również przekazać, np. ::"
+
+#: ../../migrating_to_v1.rst:313
+msgid "With this type split also came event changes, which are enumerated in :ref:`migrating_1_0_event_changes`."
+msgstr "Podział typów przyniósł również zmiany w zdarzeniach, które wyszczególniono w :ref:`migrating_1_0_event_changes`."
+
+#: ../../migrating_to_v1.rst:317
+msgid "Miscellaneous Model Changes"
+msgstr "Różne zmiany w modelach"
+
+#: ../../migrating_to_v1.rst:319
+msgid "There were lots of other things added or removed in the models in general."
+msgstr "Wprowadzono też wiele innych zmian polegających na dodaniu lub usunięciu elementów w modelach."
+
+#: ../../migrating_to_v1.rst:321
+msgid "They will be enumerated here."
+msgstr "Zostały one wymienione tutaj."
+
+#: ../../migrating_to_v1.rst:323
+msgid "**Removed**"
+msgstr "**Usunięto**"
+
+#: ../../migrating_to_v1.rst:325
+msgid ":meth:`Client.login` no longer accepts email and password logins."
+msgstr ":meth:`Client.login` nie akceptuje już logowania za pomocą e-maila i hasła."
+
+#: ../../migrating_to_v1.rst:327
+msgid "Use a token and ``bot=False``."
+msgstr "Użyj tokenu i ``bot=False``."
+
+#: ../../migrating_to_v1.rst:326
+msgid "``Member.roles`` no longer includes the default role."
+msgstr "``Member.roles`` nie zawiera już roli domyślnej."
+
+#: ../../migrating_to_v1.rst:327
+msgid "``User.avatar`` and ``Guild.icon`` no longer return the hash, use ``User.avatar_url_as(static_format='png')`` or ``Guild.icon_url_as(static_format='png')`` instead."
+msgstr "``User.avatar`` oraz ``Guild.icon`` nie zwracają już hashu. Użyj zamiast tego ``User.avatar_url_as(static_format='png')`` lub ``Guild.icon_url_as(static_format='png')``."
+
+#: ../../migrating_to_v1.rst:329
+msgid "``Client.get_all_emojis``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:331
+msgid "Use :attr:`Client.emojis` instead."
+msgstr "Użyj zamiast tego :attr:`Client.emojis`."
+
+#: ../../migrating_to_v1.rst:333
+msgid "``Client.messages``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:335
+msgid "Use read-only :attr:`Client.cached_messages` instead."
+msgstr "Użyj zamiast tego tylko do odczytu :attr:`Client.cached_messages`."
+
+#: ../../migrating_to_v1.rst:332
+msgid "``Client.get_all_channels()`` is now :attr:`Client.get_all_guild_channels()`."
+msgstr "``Client.get_all_channels()`` to teraz :attr:`Client.get_all_guild_channels()`."
+
+#: ../../migrating_to_v1.rst:337
+msgid "``Client.wait_for_message`` and ``Client.wait_for_reaction`` are gone."
+msgstr "``Client.wait_for_message`` i ``Client.wait_for_reaction`` zostały usunięte."
+
+#: ../../migrating_to_v1.rst:339
+msgid "Use :meth:`Client.wait_for` instead."
+msgstr "Użyj zamiast tego :meth:`Client.wait_for`."
+
+#: ../../migrating_to_v1.rst:341
+msgid "``Channel.voice_members``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:343
+msgid "Use :attr:`VoiceChannel.members` instead."
+msgstr "Użyj zamiast tego :attr:`VoiceChannel.members`."
+
+#: ../../migrating_to_v1.rst:345
+msgid "``Channel.is_private``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:347
+msgid "Use ``isinstance`` instead with one of the :ref:`discord_api_abcs` instead."
+msgstr "Użyj zamiast tego ``isinstance`` z jedną z :ref:`discord_api_abcs`."
+
+#: ../../migrating_to_v1.rst:348
+msgid "e.g. ``isinstance(channel, discord.abc.GuildChannel)`` will check if it isn't a private channel."
+msgstr "np. ``isinstance(channel, discord.abc.GuildChannel)`` sprawdzi, czy nie jest to kanał prywatny."
+
+#: ../../migrating_to_v1.rst:350
+msgid "``Client.accept_invite``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:352
+msgid "There is no replacement for this one. This functionality is deprecated API wise."
+msgstr "Brak zamiennika dla tej funkcji. Ta funkcjonalność jest przestarzała w kontekście API."
+
+#: ../../migrating_to_v1.rst:354
+msgid "``Guild.default_channel`` / ``Server.default_channel`` and ``Channel.is_default``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:356
+msgid "The concept of a default channel was removed from Discord. See `#329 <https://github.com/hammerandchisel/discord-api-docs/pull/329>`_."
+msgstr "Koncepcja domyślnego kanału została usunięta z Discorda. Zobacz `#329 <https://github.com/hammerandchisel/discord-api-docs/pull/329>`_."
+
+#: ../../migrating_to_v1.rst:359
+msgid "``Message.edited_timestamp``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:361
+msgid "Use :attr:`Message.edited_at` instead."
+msgstr "Użyj zamiast tego :attr:`Message.edited_at`."
+
+#: ../../migrating_to_v1.rst:363
+msgid "``Message.timestamp``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:365
+msgid "Use :attr:`Message.created_at` instead."
+msgstr "Użyj zamiast tego :attr:`Message.created_at`."
+
+#: ../../migrating_to_v1.rst:367
+msgid "``Colour.to_tuple()``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:369
+msgid "Use :meth:`Colour.to_rgb` instead."
+msgstr "Użyj zamiast tego :meth:`Colour.to_rgb`."
+
+#: ../../migrating_to_v1.rst:371
+msgid "``Permissions.view_audit_logs``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:373
+msgid "Use :attr:`Permissions.view_audit_log` instead."
+msgstr "Użyj zamiast tego :attr:`Permissions.view_audit_log`."
+
+#: ../../migrating_to_v1.rst:375
+msgid "``Member.game``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:377
+msgid "Use :attr:`Member.activities` instead."
+msgstr "Użyj zamiast tego :attr:`Member.activities`."
+
+#: ../../migrating_to_v1.rst:379
+msgid "``Guild.role_hierarchy`` / ``Server.role_hierarchy``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:381
+msgid "Use :attr:`Guild.roles` instead. Note that while sorted, it is in the opposite order of what the old ``Guild.role_hierarchy`` used to be."
+msgstr "Użyj zamiast tego :attr:`Guild.roles`. Zauważ, że choć posortowane, jest to w odwrotnej kolejności niż to, co było w starym ``Guild.role_hierarchy``."
+
+#: ../../migrating_to_v1.rst:384
+msgid "**Changed**"
+msgstr "**Zmieniono**"
+
+#: ../../migrating_to_v1.rst:386
+msgid ":attr:`Member.avatar_url` and :attr:`User.avatar_url` now return the default avatar if a custom one is not set."
+msgstr ":attr:`Member.avatar_url` i :attr:`User.avatar_url` zwracają teraz domyślny awatar, jeśli niestandardowy nie jest ustawiony."
+
+#: ../../migrating_to_v1.rst:387
+msgid ":attr:`Message.embeds` is now a list of :class:`Embed` instead of :class:`dict` objects."
+msgstr ":attr:`Message.embeds` jest teraz listą obiektów :class:`Embed` zamiast :class:`dict`."
+
+#: ../../migrating_to_v1.rst:388
+msgid ":attr:`Message.attachments` is now a list of :class:`Attachment` instead of :class:`dict` object."
+msgstr ":attr:`Message.attachments` jest teraz listą obiektów :class:`Attachment` zamiast :class:`dict`."
+
+#: ../../migrating_to_v1.rst:389
+msgid ":attr:`Guild.roles` is now sorted through hierarchy. The first element is always the ``@everyone`` role."
+msgstr ":attr:`Guild.roles` jest teraz posortowane hierarchicznie. Pierwszym elementem jest zawsze rola ``@everyone``."
+
+#: ../../migrating_to_v1.rst:391
+msgid "**Added**"
+msgstr "**Dodano**"
+
+#: ../../migrating_to_v1.rst:393
+msgid ":class:`Attachment` to represent a discord attachment."
+msgstr ":class:`Attachment` do reprezentowania załącznika Discorda."
+
+#: ../../migrating_to_v1.rst:394
+msgid ":class:`CategoryChannel` to represent a channel category."
+msgstr ":class:`CategoryChannel` do reprezentowania kategorii kanału."
+
+#: ../../migrating_to_v1.rst:395
+msgid ":attr:`VoiceChannel.members` for fetching members connected to a voice channel."
+msgstr ":attr:`VoiceChannel.members` do pobierania członków połączonych z kanałem głosowym."
+
+#: ../../migrating_to_v1.rst:396
+msgid ":attr:`TextChannel.members` for fetching members that can see the channel."
+msgstr ":attr:`TextChannel.members` do pobierania członków, którzy mogą widzieć kanał."
+
+#: ../../migrating_to_v1.rst:397
+msgid ":attr:`Role.members` for fetching members that have the role."
+msgstr ":attr:`Role.members` do pobierania członków, którzy posiadają daną rolę."
+
+#: ../../migrating_to_v1.rst:398
+msgid ":attr:`Guild.text_channels` for fetching text channels only."
+msgstr ":attr:`Guild.text_channels` do pobierania tylko kanałów tekstowych."
+
+#: ../../migrating_to_v1.rst:399
+msgid ":attr:`Guild.voice_channels` for fetching voice channels only."
+msgstr ":attr:`Guild.voice_channels` do pobierania tylko kanałów głosowych."
+
+#: ../../migrating_to_v1.rst:400
+msgid ":attr:`Guild.categories` for fetching channel categories only."
+msgstr ":attr:`Guild.categories` do pobierania tylko kategorii kanałów."
+
+#: ../../migrating_to_v1.rst:401
+msgid ":attr:`TextChannel.category` and :attr:`VoiceChannel.category` to get the category a channel belongs to."
+msgstr ":attr:`TextChannel.category` i :attr:`VoiceChannel.category` do pobierania kategorii, do której należy kanał."
+
+#: ../../migrating_to_v1.rst:402
+msgid ":meth:`Guild.by_category` to get channels grouped by their category."
+msgstr ":meth:`Guild.by_category` do pobierania kanałów pogrupowanych według kategorii."
+
+#: ../../migrating_to_v1.rst:403
+msgid ":attr:`Guild.chunked` to check member chunking status."
+msgstr ":attr:`Guild.chunked` do sprawdzania statusu chunkowania członków."
+
+#: ../../migrating_to_v1.rst:404
+msgid ":attr:`Guild.explicit_content_filter` to fetch the content filter."
+msgstr ":attr:`Guild.explicit_content_filter` do pobierania filtra treści."
+
+#: ../../migrating_to_v1.rst:405
+msgid ":attr:`Guild.shard_id` to get a guild's Shard ID if you're sharding."
+msgstr ":attr:`Guild.shard_id` do pobierania ID Sharda gildii, jeśli używasz shardingu."
+
+#: ../../migrating_to_v1.rst:406
+msgid ":attr:`Client.users` to get all visible :class:`User` instances."
+msgstr ":attr:`Client.users` do pobierania wszystkich widocznych instancji :class:`User`."
+
+#: ../../migrating_to_v1.rst:407
+msgid ":meth:`Client.get_user` to get a :class:`User` by ID."
+msgstr ":meth:`Client.get_user` do pobierania :class:`User` po ID."
+
+#: ../../migrating_to_v1.rst:408
+msgid ":meth:`User.avatar_url_as` to get an avatar in a specific size or format."
+msgstr ":meth:`User.avatar_url_as` do pobierania awatara w określonym rozmiarze lub formacie."
+
+#: ../../migrating_to_v1.rst:409
+msgid ":meth:`Guild.vanity_invite` to fetch the guild's vanity invite."
+msgstr ":meth:`Guild.vanity_invite` do pobierania zaproszenia vanity gildii."
+
+#: ../../migrating_to_v1.rst:410
+msgid ":meth:`Guild.audit_logs` to fetch the guild's audit logs."
+msgstr ":meth:`Guild.audit_logs` do pobierania logów audytu gildii."
+
+#: ../../migrating_to_v1.rst:411
+msgid ":attr:`Message.webhook_id` to fetch the message's webhook ID."
+msgstr ":attr:`Message.webhook_id` do pobierania ID webhooka wiadomości."
+
+#: ../../migrating_to_v1.rst:412
+msgid ":attr:`Message.activity` and :attr:`Message.application` for Rich Presence related information."
+msgstr ":attr:`Message.activity` i :attr:`Message.application` dla informacji związanych z Rich Presence."
+
+#: ../../migrating_to_v1.rst:413
+msgid ":meth:`TextChannel.is_nsfw` to check if a text channel is NSFW."
+msgstr ":meth:`TextChannel.is_nsfw` do sprawdzania, czy kanał tekstowy jest NSFW."
+
+#: ../../migrating_to_v1.rst:414
+msgid ":meth:`Colour.from_rgb` to construct a :class:`Colour` from RGB tuple."
+msgstr ":meth:`Colour.from_rgb` do konstruowania :class:`Colour` z krotki RGB."
+
+#: ../../migrating_to_v1.rst:415
+msgid ":meth:`Guild.get_role` to get a role by its ID."
+msgstr ":meth:`Guild.get_role` do pobierania roli po jej ID."
+
+#: ../../migrating_to_v1.rst:420
+msgid "Sending Messages"
+msgstr "Wysyłanie wiadomości"
+
+#: ../../migrating_to_v1.rst:422
+msgid "One of the changes that were done was the merger of the previous ``Client.send_message`` and ``Client.send_file`` functionality into a single method, :meth:`~abc.Messageable.send`."
+msgstr "Jedną ze zmian było połączenie poprzednich funkcji ``Client.send_message`` i ``Client.send_file`` w jedną metodę: :meth:`~abc.Messageable.send`."
+
+#: ../../migrating_to_v1.rst:425
+#: ../../migrating_to_v1.rst:1079
+msgid "Basically: ::"
+msgstr "Zasadniczo: ::"
+
+#: ../../migrating_to_v1.rst:433
+msgid "This supports everything that the old ``send_message`` supported such as embeds: ::"
+msgstr "Obsługuje to wszystko, co obsługiwał stary ``send_message``, takie jak osadzenia: ::"
+
+#: ../../migrating_to_v1.rst:438
+msgid "There is a caveat with sending files however, as this functionality was expanded to support multiple file attachments, you must now use a :class:`File` pseudo-namedtuple to upload a single file. ::"
+msgstr "Istnieje jednak pewne zastrzeżenie dotyczące wysyłania plików, ponieważ ta funkcjonalność została rozszerzona o obsługę wielu załączników, musisz teraz użyć pseudo-nazwanej krotki :class:`File`, aby przesłać pojedynczy plik. ::"
+
+#: ../../migrating_to_v1.rst:447
+msgid "This change was to facilitate multiple file uploads: ::"
+msgstr "Ta zmiana miała na celu ułatwienie przesyłania wielu plików: ::"
+
+#: ../../migrating_to_v1.rst:459
+msgid "Asynchronous Iterators"
+msgstr "Asynchroniczne iteratory"
+
+#: ../../migrating_to_v1.rst:461
+msgid "Prior to v1.0, certain functions like ``Client.logs_from`` would return a different type if done in Python 3.4 or 3.5+."
+msgstr "Przed wersją 1.0, niektóre funkcje, takie jak ``Client.logs_from``, zwracały inny typ, jeśli były używane w Pythonie 3.4 lub 3.5+."
+
+#: ../../migrating_to_v1.rst:463
+msgid "In v1.0, this change has been reverted and will now return a singular type meeting an abstract concept called :class:`AsyncIterator`."
+msgstr "W wersji 1.0 ta zmiana została cofnięta i teraz będzie zwracany pojedynczy typ spełniający abstrakcyjną koncepcję zwaną :class:`AsyncIterator`."
+
+#: ../../migrating_to_v1.rst:466
+msgid "This allows you to iterate over it like normal: ::"
+msgstr "Pozwala to na iterowanie po nim w normalny sposób: ::"
+
+#: ../../migrating_to_v1.rst:471
+msgid "Or turn it into a list: ::"
+msgstr "Lub przekształcić go w listę: ::"
+
+#: ../../migrating_to_v1.rst:477
+msgid "A handy aspect of returning :class:`AsyncIterator` is that it allows you to chain functions together such as :meth:`AsyncIterator.map` or :meth:`AsyncIterator.filter`: ::"
+msgstr "Przydatnym aspektem zwracania :class:`AsyncIterator` jest to, że pozwala on na łączenie funkcji, takich jak :meth:`AsyncIterator.map` lub :meth:`AsyncIterator.filter`: ::"
+
+#: ../../migrating_to_v1.rst:483
+msgid "The functions passed to :meth:`AsyncIterator.map` or :meth:`AsyncIterator.filter` can be either coroutines or regular functions."
+msgstr "Funkcje przekazywane do :meth:`AsyncIterator.map` lub :meth:`AsyncIterator.filter` mogą być korutynami lub zwykłymi funkcjami."
+
+#: ../../migrating_to_v1.rst:486
+msgid "You can also get single elements a la :func:`discord.utils.find` or :func:`discord.utils.get` via :meth:`AsyncIterator.get` or :meth:`AsyncIterator.find`: ::"
+msgstr "Możesz również pobierać pojedyncze elementy w stylu :func:`discord.utils.find` lub :func:`discord.utils.get` za pomocą :meth:`AsyncIterator.get` lub :meth:`AsyncIterator.find`: ::"
+
+#: ../../migrating_to_v1.rst:491
+msgid "The following return :class:`AsyncIterator`:"
+msgstr "Następujące zwracają :class:`AsyncIterator`:"
+
+#: ../../migrating_to_v1.rst:493
+msgid ":meth:`abc.Messageable.history`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:494
+msgid ":meth:`Guild.audit_logs`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:352
+msgid "Message Events"
+msgstr "Zdarzenia dotyczące wiadomości"
+
+#: ../../migrating_to_v1.rst:500
+#: ../../migrating_to_v1.rst:926
+msgid "Event Changes"
+msgstr "Zmiany w zdarzeniach"
+
+#: ../../migrating_to_v1.rst:502
+msgid "A lot of events have gone through some changes."
+msgstr "Wiele zdarzeń przeszło pewne zmiany."
+
+#: ../../migrating_to_v1.rst:504
+msgid "Many events with ``server`` in the name were changed to use ``guild`` instead."
+msgstr "Wiele zdarzeń zawierających w nazwie „server” zostało zmienionych na użycie „guild”."
+
+#: ../../migrating_to_v1.rst:506
+#: ../../migrating_to_v1.rst:570
+msgid "Before:"
+msgstr "Przed:"
+
+#: ../../migrating_to_v1.rst:508
+msgid "``on_server_join``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:509
+msgid "``on_server_remove``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:510
+msgid "``on_server_update``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:511
+msgid "``on_server_role_create``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:512
+msgid "``on_server_role_delete``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:513
+msgid "``on_server_role_update``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:514
+msgid "``on_server_emojis_update``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:515
+msgid "``on_server_available``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:516
+msgid "``on_server_unavailable``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:518
+#: ../../migrating_to_v1.rst:576
+msgid "After:"
+msgstr "Po:"
+
+#: ../../migrating_to_v1.rst:520
+msgid ":func:`on_guild_join`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:521
+msgid ":func:`on_guild_remove`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:522
+msgid ":func:`on_guild_update`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:523
+msgid ":func:`on_guild_role_create`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:524
+msgid ":func:`on_guild_role_delete`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:525
+msgid ":func:`on_guild_role_update`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:526
+msgid ":func:`on_guild_emojis_update`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:527
+msgid ":func:`on_guild_available`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:528
+msgid ":func:`on_guild_unavailable`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:531
+msgid "The :func:`on_voice_state_update` event has received an argument change."
+msgstr "Zdarzenie :func:`on_voice_state_update` otrzymało zmieniony argument."
+
+#: ../../migrating_to_v1.rst:533
+#: ../../migrating_to_v1.rst:545
+#: ../../migrating_to_v1.rst:557
+#: ../../migrating_to_v1.rst:617
+#: ../../migrating_to_v1.rst:930
+msgid "Before: ::"
+msgstr "Przed: ::"
+
+#: ../../migrating_to_v1.rst:537
+#: ../../migrating_to_v1.rst:549
+#: ../../migrating_to_v1.rst:561
+#: ../../migrating_to_v1.rst:629
+#: ../../migrating_to_v1.rst:936
+msgid "After: ::"
+msgstr "Po: ::"
+
+#: ../../migrating_to_v1.rst:541
+msgid "Instead of two :class:`Member` objects, the new event takes one :class:`Member` object and two :class:`VoiceState` objects."
+msgstr "Zamiast dwóch obiektów :class:`Member`, nowe zdarzenie przyjmuje jeden obiekt :class:`Member` i dwa obiekty :class:`VoiceState`."
+
+#: ../../migrating_to_v1.rst:543
+msgid "The :func:`on_guild_emojis_update` event has received an argument change."
+msgstr "Zdarzenie :func:`on_guild_emojis_update` otrzymało zmieniony argument."
+
+#: ../../migrating_to_v1.rst:553
+msgid "The first argument is now the :class:`Guild` that the emojis were updated from."
+msgstr "Pierwszym argumentem jest teraz :class:`Guild`, z której zaktualizowano emoji."
+
+#: ../../migrating_to_v1.rst:555
+msgid "The :func:`on_member_ban` event has received an argument change as well:"
+msgstr "Zdarzenie :func:`on_member_ban` również otrzymało zmieniony argument:"
+
+#: ../../migrating_to_v1.rst:565
+msgid "As part of the change, the event can either receive a :class:`User` or :class:`Member`. To help in the cases that have :class:`User`, the :class:`Guild` is provided as the first parameter."
+msgstr "W ramach zmiany, zdarzenie może otrzymać obiekt :class:`User` lub :class:`Member`. Aby pomóc w przypadkach, gdy jest to :class:`User`, :class:`Guild` jest dostarczana jako pierwszy parametr."
+
+#: ../../migrating_to_v1.rst:568
+msgid "The ``on_channel_`` events have received a type level split (see :ref:`migrating_1_0_channel_split`)."
+msgstr "Zdarzenia ``on_channel_`` otrzymały podział na poziomie typów (zobacz :ref:`migrating_1_0_channel_split`)."
+
+#: ../../migrating_to_v1.rst:572
+msgid "``on_channel_delete``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:573
+msgid "``on_channel_create``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:574
+msgid "``on_channel_update``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:578
+msgid ":func:`on_guild_channel_delete`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:579
+msgid ":func:`on_guild_channel_create`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:580
+msgid ":func:`on_guild_channel_update`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:581
+msgid ":func:`on_private_channel_delete`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:582
+msgid ":func:`on_private_channel_create`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:583
+msgid ":func:`on_private_channel_update`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:585
+msgid "The ``on_guild_channel_`` events correspond to :class:`abc.GuildChannel` being updated (i.e. :class:`TextChannel` and :class:`VoiceChannel`) and the ``on_private_channel_`` events correspond to :class:`abc.PrivateChannel` being updated (i.e. :class:`DMChannel` and :class:`GroupChannel`)."
+msgstr "Zdarzenia ``on_guild_channel_`` odpowiadają aktualizacjom :class:`abc.GuildChannel` (tj. :class:`TextChannel` i :class:`VoiceChannel`), a zdarzenia ``on_private_channel_`` odpowiadają aktualizacjom :class:`abc.PrivateChannel` (tj. :class:`DMChannel` i :class:`GroupChannel`)."
+
+#: ../../migrating_to_v1.rst:592
+msgid "Voice Changes"
+msgstr "Zmiany w obsłudze głosowej"
+
+#: ../../migrating_to_v1.rst:594
+msgid "Voice sending has gone through a complete redesign."
+msgstr "Wysyłanie głosu zostało całkowicie przeprojektowane."
+
+#: ../../migrating_to_v1.rst:596
+msgid "In particular:"
+msgstr "W szczególności:"
+
+#: ../../migrating_to_v1.rst:598
+msgid "Connection is done through :meth:`VoiceChannel.connect` instead of ``Client.join_voice_channel``."
+msgstr "Połączenie odbywa się za pomocą :meth:`VoiceChannel.connect` zamiast ``Client.join_voice_channel``."
+
+#: ../../migrating_to_v1.rst:599
+msgid "You no longer create players and operate on them (you no longer store them)."
+msgstr "Nie tworzysz już odtwarzaczy i nie operujesz na nich (nie przechowujesz ich już)."
+
+#: ../../migrating_to_v1.rst:600
+msgid "You instead request :class:`VoiceClient` to play an :class:`AudioSource` via :meth:`VoiceClient.play`."
+msgstr "Zamiast tego, prosisz :class:`VoiceClient` o odtworzenie :class:`AudioSource` za pomocą :meth:`VoiceClient.play`."
+
+#: ../../migrating_to_v1.rst:601
+msgid "There are different built-in :class:`AudioSource`\\s."
+msgstr "Istnieją różne wbudowane :class:`AudioSource`."
+
+#: ../../migrating_to_v1.rst:603
+msgid ":class:`FFmpegPCMAudio` is the equivalent of ``create_ffmpeg_player``"
+msgstr ":class:`FFmpegPCMAudio` jest odpowiednikiem ``create_ffmpeg_player``."
+
+#: ../../migrating_to_v1.rst:605
+msgid "create_ffmpeg_player/create_stream_player/create_ytdl_player have all been removed."
+msgstr "create_ffmpeg_player/create_stream_player/create_ytdl_player zostały usunięte."
+
+#: ../../migrating_to_v1.rst:607
+msgid "The goal is to create :class:`AudioSource` instead."
+msgstr "Celem jest zamiast tego tworzenie :class:`AudioSource`."
+
+#: ../../migrating_to_v1.rst:609
+msgid "Using :meth:`VoiceClient.play` will not return an ``AudioPlayer``."
+msgstr "Użycie :meth:`VoiceClient.play` nie zwróci już ``AudioPlayer``."
+
+#: ../../migrating_to_v1.rst:611
+msgid "Instead, it's \"flattened\" like :class:`User` -> :class:`Member` is."
+msgstr "Zamiast tego, jest „spłaszczony” tak jak :class:`User` -> :class:`Member`."
+
+#: ../../migrating_to_v1.rst:613
+msgid "The ``after`` parameter now takes a single parameter (the error)."
+msgstr "Parametr ``after`` przyjmuje teraz pojedynczy parametr (błąd)."
+
+#: ../../migrating_to_v1.rst:615
+msgid "Basically:"
+msgstr "Zasadniczo:"
+
+#: ../../migrating_to_v1.rst:328
+msgid "``User.bot`` is now always a :class:`bool`, previously it could be ``None``."
+msgstr "``User.bot`` jest teraz zawsze typu :class:`bool`. Wcześniej mógł przyjmować wartość ``None``."
+
+#: ../../migrating_to_v1.rst:639
+msgid "With the changed :class:`AudioSource` design, you can now change the source that the :class:`VoiceClient` is playing at runtime via :attr:`VoiceClient.source`."
+msgstr "Dzięki zmienionemu projektowi :class:`AudioSource`, możesz teraz zmieniać źródło odtwarzane przez :class:`VoiceClient` w czasie rzeczywistym za pomocą :attr:`VoiceClient.source`."
+
+#: ../../migrating_to_v1.rst:642
+msgid "For example, you can add a :class:`PCMVolumeTransformer` to allow changing the volume: ::"
+msgstr "Na przykład, możesz dodać :class:`PCMVolumeTransformer`, aby umożliwić zmianę głośności: ::"
+
+#: ../../migrating_to_v1.rst:647
+msgid "An added benefit of the redesign is that it will be much more resilient towards reconnections:"
+msgstr "Dodatkową korzyścią z przeprojektowania jest to, że będzie ono znacznie bardziej odporne na ponowne połączenia:"
+
+#: ../../migrating_to_v1.rst:649
+msgid "The voice websocket will now automatically re-connect and re-do the handshake when disconnected."
+msgstr "WebSocket głosowy będzie teraz automatycznie ponownie łączyć się i ponownie wykonywać uzgadnianie po rozłączeniu."
+
+#: ../../migrating_to_v1.rst:650
+msgid "The initial connect handshake will now retry up to 5 times so you no longer get as many ``asyncio.TimeoutError``."
+msgstr "Początkowe uzgadnianie połączenia będzie teraz ponawiane do 5 razy, więc nie będziesz już otrzymywać tak wielu błędów ``asyncio.TimeoutError``."
+
+#: ../../migrating_to_v1.rst:651
+msgid "Audio will now stop and resume when a disconnect is found."
+msgstr "Dźwięk zostanie teraz zatrzymany i wznowiony po wykryciu rozłączenia."
+
+#: ../../migrating_to_v1.rst:653
+msgid "This includes changing voice regions etc."
+msgstr "Obejmuje to zmianę regionów głosowych itp."
+
+#: ../../migrating_to_v1.rst:659
+msgid "Waiting For Events"
+msgstr "Oczekiwanie na zdarzenia"
+
+#: ../../migrating_to_v1.rst:661
+msgid "Prior to v1.0, the machinery for waiting for an event outside of the event itself was done through two different functions, ``Client.wait_for_message`` and ``Client.wait_for_reaction``. One problem with one such approach is that it did not allow you to wait for events outside of the ones provided by the library."
+msgstr "Przed wersją 1.0 mechanizm oczekiwania na zdarzenie poza samym zdarzeniem odbywał się za pomocą dwóch różnych funkcji: ``Client.wait_for_message`` i ``Client.wait_for_reaction``. Jednym z problemów z takim podejściem było to, że nie pozwalało ono na oczekiwanie na zdarzenia spoza tych dostarczonych przez bibliotekę."
+
+#: ../../migrating_to_v1.rst:665
+msgid "In v1.0 the concept of waiting for another event has been generalised to work with any event as :meth:`Client.wait_for`."
+msgstr "W wersji 1.0 koncepcja oczekiwania na inne zdarzenie została uogólniona, aby działać z dowolnym zdarzeniem jako :meth:`Client.wait_for`."
+
+#: ../../migrating_to_v1.rst:667
+msgid "For example, to wait for a message: ::"
+msgstr "Na przykład, aby poczekać na wiadomość: ::"
+
+#: ../../migrating_to_v1.rst:678
+msgid "To facilitate multiple returns, :meth:`Client.wait_for` returns either a single argument, no arguments, or a tuple of arguments."
+msgstr "Aby ułatwić wielokrotne zwracanie, :meth:`Client.wait_for` zwraca pojedynczy argument, brak argumentów lub krotkę argumentów."
+
+#: ../../migrating_to_v1.rst:681
+msgid "For example, to wait for a reaction: ::"
+msgstr "Na przykład, aby poczekać na reakcję: ::"
+
+#: ../../migrating_to_v1.rst:687
+msgid "Since this function now can return multiple arguments, the ``timeout`` parameter will now raise a :exc:`asyncio.TimeoutError` when reached instead of setting the return to ``None``. For example:"
+msgstr "Ponieważ ta funkcja może teraz zwracać wiele argumentów, parametr ``timeout`` wywoła teraz :exc:`asyncio.TimeoutError` po osiągnięciu limitu czasu, zamiast ustawiać wartość zwracaną na ``None``. Na przykład:"
+
+#: ../../migrating_to_v1.rst:704
+msgid "Upgraded Dependencies"
+msgstr "Zaktualizowane zależności"
+
+#: ../../migrating_to_v1.rst:706
+msgid "Following v1.0 of the library, we've updated our requirements to :doc:`aiohttp <aio:index>` v2.0 or higher."
+msgstr "Po wersji 1.0 biblioteki zaktualizowaliśmy nasze wymagania do :doc:`aiohttp <aio:index>` w wersji 2.0 lub wyższej."
+
+#: ../../migrating_to_v1.rst:708
+msgid "Since this is a backwards incompatible change, it is recommended that you see the `changes <http://aiohttp.readthedocs.io/en/stable/changes.html#rc1-2017-03-15>`_ and the :doc:`aio:migration_to_2xx` pages for details on the breaking changes in :doc:`aiohttp <aio:index>`."
+msgstr "Ponieważ jest to zmiana niekompatybilna wstecz, zaleca się zapoznanie się ze `zmianami <http://aiohttp.readthedocs.io/en/stable/changes.html#rc1-2017-03-15>`_ oraz stronami :doc:`aio:migration_to_2xx` w celu uzyskania szczegółów dotyczących zmian wprowadzających niekompatybilność w :doc:`aiohttp <aio:index>`."
+
+#: ../../migrating_to_v1.rst:713
+msgid "Of the most significant for common users is the removal of helper functions such as:"
+msgstr "Do najważniejszych zmian dla zwykłych użytkowników należy usunięcie funkcji pomocniczych, takich jak:"
+
+#: ../../migrating_to_v1.rst:715
+msgid "``aiohttp.get``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:716
+msgid "``aiohttp.post``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:717
+msgid "``aiohttp.delete``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:718
+msgid "``aiohttp.patch``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:719
+msgid "``aiohttp.head``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:720
+msgid "``aiohttp.put``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:721
+msgid "``aiohttp.request``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:723
+msgid "It is recommended that you create a session instead: ::"
+msgstr "Zaleca się zamiast tego utworzenie sesji: ::"
+
+#: ../../migrating_to_v1.rst:729
+msgid "Since it is better to not create a session for every request, you should store it in a variable and then call ``session.close`` on it when it needs to be disposed."
+msgstr "Ponieważ lepiej jest nie tworzyć sesji dla każdego żądania, należy ją przechowywać w zmiennej, a następnie wywołać na niej ``session.close``, gdy będzie wymagała usunięcia."
+
+#: ../../migrating_to_v1.rst:733
+msgid "Sharding"
+msgstr "Sharding"
+
+#: ../../migrating_to_v1.rst:735
+msgid "The library has received significant changes on how it handles sharding and now has sharding as a first-class citizen."
+msgstr "Biblioteka otrzymała znaczące zmiany w sposobie obsługi shardingu i teraz sharding jest traktowany jako pełnoprawna funkcja."
+
+#: ../../migrating_to_v1.rst:737
+msgid "If using a Bot account and you want to shard your bot in a single process then you can use the :class:`AutoShardedClient`."
+msgstr "Jeśli używasz konta bota i chcesz shardingować swojego bota w jednym procesie, możesz użyć :class:`AutoShardedClient`."
+
+#: ../../migrating_to_v1.rst:739
+msgid "This class allows you to use sharding without having to launch multiple processes or deal with complicated IPC."
+msgstr "Ta klasa pozwala na używanie shardingu bez konieczności uruchamiania wielu procesów lub radzenia sobie ze skomplikowanym IPC."
+
+#: ../../migrating_to_v1.rst:741
+msgid "It should be noted that **the sharded client does not support user accounts**. This is due to the changes in connection logic and state handling."
+msgstr "Należy zauważyć, że **klient shardingowy nie obsługuje kont użytkowników**. Wynika to ze zmian w logice połączeń i obsłudze stanu."
+
+#: ../../migrating_to_v1.rst:744
+msgid "Usage is as simple as doing: ::"
+msgstr "Użycie jest tak proste, jak: ::"
+
+#: ../../migrating_to_v1.rst:748
+msgid "instead of using :class:`Client`."
+msgstr "zamiast używać :class:`Client`."
+
+#: ../../migrating_to_v1.rst:750
+msgid "This will launch as many shards as your bot needs using the ``/gateway/bot`` endpoint, which allocates about 1000 guilds per shard."
+msgstr "Spowoduje to uruchomienie tylu shardów, ile potrzebuje Twój bot, używając punktu końcowego ``/gateway/bot``, który przydziela około 1000 gildii na shard."
+
+#: ../../migrating_to_v1.rst:753
+msgid "If you want more control over the sharding you can specify ``shard_count`` and ``shard_ids``. ::"
+msgstr "Jeśli chcesz mieć większą kontrolę nad shardingiem, możesz określić ``shard_count`` i ``shard_ids``. ::"
+
+#: ../../migrating_to_v1.rst:761
+msgid "For users of the command extension, there is also :class:`~ext.commands.AutoShardedBot` which behaves similarly."
+msgstr "Dla użytkowników rozszerzenia komend dostępna jest również :class:`~ext.commands.AutoShardedBot`, która działa podobnie."
+
+#: ../../migrating_to_v1.rst:764
+msgid "Connection Improvements"
+msgstr "Ulepszenia połączeń"
+
+#: ../../migrating_to_v1.rst:766
+msgid "In v1.0, the auto reconnection logic has been powered up significantly."
+msgstr "W wersji 1.0 logika automatycznego ponownego łączenia została znacznie ulepszona."
+
+#: ../../migrating_to_v1.rst:768
+msgid ":meth:`Client.connect` has gained a new keyword argument, ``reconnect`` that defaults to ``True`` which controls the reconnect logic. When enabled, the client will automatically reconnect in all instances of your internet going offline or Discord going offline with exponential back-off."
+msgstr ":meth:`Client.connect` zyskał nowy argument słownikowy, ``reconnect``, który domyślnie ma wartość ``True`` i kontroluje logikę ponownego łączenia. Po włączeniu, klient automatycznie ponownie połączy się we wszystkich przypadkach, gdy Twój internet lub Discord przestanie działać, z wykładniczym wycofaniem."
+
+#: ../../migrating_to_v1.rst:772
+msgid ":meth:`Client.run` and :meth:`Client.start` gains this keyword argument as well, but for most cases you will not need to specify it unless turning it off."
+msgstr ":meth:`Client.run` i :meth:`Client.start` również zyskują ten argument słownikowy, ale w większości przypadków nie będziesz musiał go określać, chyba że go wyłączysz."
+
+#: ../../migrating_to_v1.rst:778
+msgid "Command Extension Changes"
+msgstr "Zmiany w rozszerzeniu komend"
+
+#: ../../migrating_to_v1.rst:780
+msgid "Due to the :ref:`migrating_1_0_model_state` changes, some of the design of the extension module had to undergo some design changes as well."
+msgstr "Ze względu na zmiany w :ref:`migrating_1_0_model_state`, część projektu modułu rozszerzeń również musiała ulec zmianom."
+
+#: ../../migrating_to_v1.rst:343
+msgid "Due to the model redesign, some events have changed their signature. The most common change is that events that took a :class:`Server` now take a :class:`Guild`."
+msgstr "Z powodu przeprojektowania modeli niektóre zdarzenia zmieniły swoje sygnatury. Najczęstszą zmianą jest to, że zdarzenia, które przyjmowały :class:`Server`, teraz przyjmują :class:`Guild`."
+
+#: ../../migrating_to_v1.rst:784
+msgid "Context Changes"
+msgstr "Zmiany kontekstu"
+
+#: ../../migrating_to_v1.rst:786
+msgid "In v1.0, the :class:`.Context` has received a lot of changes with how it's retrieved and used."
+msgstr "W wersji 1.0, :class:`.Context` otrzymał wiele zmian w sposobie jego pobierania i używania."
+
+#: ../../migrating_to_v1.rst:788
+msgid "The biggest change is that ``pass_context=True`` no longer exists, :class:`.Context` is always passed. Ergo:"
+msgstr "Największą zmianą jest to, że ``pass_context=True`` już nie istnieje, :class:`.Context` jest zawsze przekazywany. Ergo:"
+
+#: ../../migrating_to_v1.rst:802
+msgid "The reason for this is because :class:`~ext.commands.Context` now meets the requirements of :class:`abc.Messageable`. This makes it have similar functionality to :class:`TextChannel` or :class:`DMChannel`. Using :meth:`~.Context.send` will either DM the user in a DM context or send a message in the channel it was in, similar to the old ``bot.say`` functionality. The old helpers have been removed in favour of the new :class:`abc.Messageable` interface. See :ref:`migrating_1_0_removed_helpers` for more information."
+msgstr "Powodem tego jest to, że :class:`~ext.commands.Context` spełnia teraz wymagania :class:`abc.Messageable`. Dzięki temu ma podobną funkcjonalność do :class:`TextChannel` lub :class:`DMChannel`. Użycie :meth:`~.Context.send` spowoduje wysłanie wiadomości DM do użytkownika w kontekście DM lub wysłanie wiadomości na kanale, na którym się znajdował, podobnie do starej funkcji ``bot.say``. Stare pomocniki zostały usunięte na rzecz nowego interfejsu :class:`abc.Messageable`. Więcej informacji znajdziesz w :ref:`migrating_1_0_removed_helpers`."
+
+#: ../../migrating_to_v1.rst:808
+msgid "Since the :class:`~ext.commands.Context` is now passed by default, several shortcuts have been added:"
+msgstr "Ponieważ :class:`~ext.commands.Context` jest teraz przekazywany domyślnie, dodano kilka skrótów:"
+
+#: ../../migrating_to_v1.rst:810
+msgid "**New Shortcuts**"
+msgstr "**Nowe skróty**"
+
+#: ../../migrating_to_v1.rst:812
+msgid ":attr:`ctx.author <ext.commands.Context.author>` is a shortcut for ``ctx.message.author``."
+msgstr ":attr:`ctx.author <ext.commands.Context.author>` to skrót do ``ctx.message.author``."
+
+#: ../../migrating_to_v1.rst:813
+msgid ":attr:`ctx.guild <ext.commands.Context.guild>` is a shortcut for ``ctx.message.guild``."
+msgstr ":attr:`ctx.guild <ext.commands.Context.guild>` to skrót do ``ctx.message.guild``."
+
+#: ../../migrating_to_v1.rst:814
+msgid ":attr:`ctx.channel <ext.commands.Context.channel>` is a shortcut for ``ctx.message.channel``."
+msgstr ":attr:`ctx.channel <ext.commands.Context.channel>` to skrót do ``ctx.message.channel``."
+
+#: ../../migrating_to_v1.rst:815
+msgid ":attr:`ctx.me <ext.commands.Context.me>` is a shortcut for ``ctx.message.guild.me`` or ``ctx.bot.user``."
+msgstr ":attr:`ctx.me <ext.commands.Context.me>` to skrót do ``ctx.message.guild.me`` lub ``ctx.bot.user``."
+
+#: ../../migrating_to_v1.rst:816
+msgid ":attr:`ctx.voice_client <ext.commands.Context.voice_client>` is a shortcut for ``ctx.message.guild.voice_client``."
+msgstr ":attr:`ctx.voice_client <ext.commands.Context.voice_client>` to skrót do ``ctx.message.guild.voice_client``."
+
+#: ../../migrating_to_v1.rst:818
+msgid "**New Functionality**"
+msgstr "**Nowa funkcjonalność**"
+
+#: ../../migrating_to_v1.rst:820
+msgid ":meth:`.Context.reinvoke` to invoke a command again."
+msgstr ":meth:`.Context.reinvoke` do ponownego wywołania komendy."
+
+#: ../../migrating_to_v1.rst:822
+msgid "This is useful for bypassing cooldowns."
+msgstr "Jest to przydatne do omijania czasów odnowienia."
+
+#: ../../migrating_to_v1.rst:823
+msgid ":attr:`.Context.valid` to check if a context can be invoked with :meth:`.Bot.invoke`."
+msgstr ":attr:`.Context.valid` do sprawdzenia, czy kontekst może być wywołany za pomocą :meth:`.Bot.invoke`."
+
+#: ../../migrating_to_v1.rst:824
+msgid ":meth:`.Context.send_help` to show the help command for an entity using the new :class:`~.ext.commands.HelpCommand` system."
+msgstr ":meth:`.Context.send_help` do wyświetlania komendy pomocy dla encji za pomocą nowego systemu :class:`~.ext.commands.HelpCommand`."
+
+#: ../../migrating_to_v1.rst:826
+msgid "This is useful if you want to show the user help if they misused a command."
+msgstr "Jest to przydatne, jeśli chcesz pokazać użytkownikowi pomoc, gdy źle użył komendy."
+
+#: ../../migrating_to_v1.rst:829
+msgid "Subclassing Context"
+msgstr "Dziedziczenie kontekstu"
+
+#: ../../migrating_to_v1.rst:831
+msgid "In v1.0, there is now the ability to subclass :class:`~ext.commands.Context` and use it instead of the default provided one."
+msgstr "W wersji 1.0 istnieje teraz możliwość dziedziczenia po :class:`~ext.commands.Context` i używania go zamiast domyślnego."
+
+#: ../../migrating_to_v1.rst:834
+msgid "For example, if you want to add some functionality to the context:"
+msgstr "Na przykład, jeśli chcesz dodać jakąś funkcjonalność do kontekstu:"
+
+#: ../../migrating_to_v1.rst:843
+msgid "Then you can use :meth:`~ext.commands.Bot.get_context` inside :func:`on_message` with combination with :meth:`~ext.commands.Bot.invoke` to use your custom context:"
+msgstr "Następnie możesz użyć :meth:`~ext.commands.Bot.get_context` wewnątrz :func:`on_message` w połączeniu z :meth:`~ext.commands.Bot.invoke`, aby użyć swojego niestandardowego kontekstu:"
+
+#: ../../migrating_to_v1.rst:853
+msgid "Now inside your commands you will have access to your custom context:"
+msgstr "Teraz wewnątrz swoich komend będziesz miał dostęp do swojego niestandardowego kontekstu:"
+
+#: ../../migrating_to_v1.rst:864
+msgid "Removed Helpers"
+msgstr "Usunięte pomocniki"
+
+#: ../../migrating_to_v1.rst:866
+msgid "With the new :class:`.Context` changes, a lot of message sending helpers have been removed."
+msgstr "Wraz z nowymi zmianami w :class:`.Context`, wiele pomocników do wysyłania wiadomości zostało usuniętych."
+
+#: ../../migrating_to_v1.rst:354
+msgid "Due to the addition of :class:`abc.Messageable`, the message events have been changed to be more consistent."
+msgstr "Dzięki dodaniu :class:`abc.Messageable`, zdarzenia dotyczące wiadomości zostały zmienione, aby były bardziej spójne."
+
+#: ../../migrating_to_v1.rst:868
+msgid "For a full list of changes, see below:"
+msgstr "Pełna lista zmian znajduje się poniżej:"
+
+#: ../../migrating_to_v1.rst:873
+msgid "``Bot.say``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:873
+#: ../../migrating_to_v1.rst:875
+msgid ":meth:`.Context.send`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:875
+msgid "``Bot.upload``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:877
+msgid "``Bot.whisper``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:877
+msgid "``ctx.author.send``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:879
+msgid "``Bot.type``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:879
+msgid ":meth:`.Context.typing` or :meth:`.Context.trigger_typing`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:881
+msgid "``Bot.reply``"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:881
+msgid "No replacement."
+msgstr "Brak zamiennika."
+
+#: ../../migrating_to_v1.rst:885
+msgid "Command Changes"
+msgstr "Zmiany w komendach"
+
+#: ../../migrating_to_v1.rst:887
+msgid "As mentioned earlier, the first command change is that ``pass_context=True`` no longer exists, so there is no need to pass this as a parameter."
+msgstr "Jak wspomniano wcześniej, pierwszą zmianą w komendach jest to, że ``pass_context=True`` już nie istnieje, więc nie ma potrzeby przekazywania tego jako parametru."
+
+#: ../../migrating_to_v1.rst:357
+msgid "Previously, :func:`on_message_edit` and :func:`on_message_delete` only worked for messages that were in the internal :class:`Client` message cache. This is still the case in v1.0 but now there's two different events for when a message is not in the cache."
+msgstr "Wcześniej :func:`on_message_edit` oraz :func:`on_message_delete` działały tylko dla wiadomości znajdujących się w wewnętrznym cache wiadomości klasy :class:`Client`. W wersji 1.0 nadal tak jest, ale dodano dwa oddzielne zdarzenia dla sytuacji, gdy wiadomości nie ma w cache."
+
+#: ../../migrating_to_v1.rst:890
+msgid "Another change is the removal of ``no_pm=True``. Instead, use the new :func:`~ext.commands.guild_only` built-in check."
+msgstr "Kolejną zmianą jest usunięcie ``no_pm=True``. Zamiast tego użyj nowej wbudowanej funkcji sprawdzającej :func:`~ext.commands.guild_only`."
+
+#: ../../migrating_to_v1.rst:893
+msgid "The ``commands`` attribute of :class:`~ext.commands.Bot` and :class:`~ext.commands.Group` have been changed from a dictionary to a set that does not have aliases. To retrieve the previous dictionary behaviour, use ``all_commands`` instead."
+msgstr "Atrybut ``commands`` w :class:`~ext.commands.Bot` i :class:`~ext.commands.Group` został zmieniony ze słownika na zbiór, który nie zawiera aliasów. Aby przywrócić poprzednie zachowanie słownika, użyj zamiast tego ``all_commands``."
+
+#: ../../migrating_to_v1.rst:896
+msgid "Command instances have gained new attributes and properties:"
+msgstr "Instancje komend zyskały nowe atrybuty i właściwości:"
+
+#: ../../migrating_to_v1.rst:898
+msgid ":attr:`~ext.commands.Command.signature` to get the signature of the command."
+msgstr ":attr:`~ext.commands.Command.signature` do pobierania sygnatury komendy."
+
+#: ../../migrating_to_v1.rst:899
+msgid ":attr:`~ext.commands.Command.usage`, an attribute to override the default signature."
+msgstr ":attr:`~ext.commands.Command.usage`, atrybut do nadpisywania domyślnej sygnatury."
+
+#: ../../migrating_to_v1.rst:900
+msgid ":attr:`~ext.commands.Command.root_parent` to get the root parent group of a subcommand."
+msgstr ":attr:`~ext.commands.Command.root_parent` do pobierania głównej grupy nadrzędnej podkomendy."
+
+#: ../../migrating_to_v1.rst:902
+msgid "For :class:`~ext.commands.Group` and :class:`~ext.commands.Bot` the following changed:"
+msgstr "Dla :class:`~ext.commands.Group` i :class:`~ext.commands.Bot` zmieniono następujące elementy:"
+
+#: ../../migrating_to_v1.rst:904
+msgid "Changed :attr:`~.GroupMixin.commands` to be a :class:`set` without aliases."
+msgstr "Zmieniono :attr:`~.GroupMixin.commands` na :class:`set` bez aliasów."
+
+#: ../../migrating_to_v1.rst:906
+msgid "Use :attr:`~.GroupMixin.all_commands` to get the old :class:`dict` with all commands."
+msgstr "Użyj :attr:`~.GroupMixin.all_commands`, aby uzyskać stary :class:`dict` ze wszystkimi komendami."
+
+#: ../../migrating_to_v1.rst:909
+msgid "Check Changes"
+msgstr "Sprawdź zmiany"
+
+#: ../../migrating_to_v1.rst:911
+msgid "Prior to v1.0, :func:`~ext.commands.check`\\s could only be synchronous. As of v1.0 checks can now be coroutines."
+msgstr "Przed wersją 1.0, :func:`~ext.commands.check` mogły być tylko synchroniczne. Od wersji 1.0, sprawdzenia mogą być teraz korutynami."
+
+#: ../../migrating_to_v1.rst:913
+msgid "Along with this change, a couple new checks were added."
+msgstr "Wraz z tą zmianą dodano kilka nowych sprawdzeń."
+
+#: ../../migrating_to_v1.rst:915
+msgid ":func:`~ext.commands.guild_only` replaces the old ``no_pm=True`` functionality."
+msgstr ":func:`~ext.commands.guild_only` zastępuje starą funkcjonalność ``no_pm=True``."
+
+#: ../../migrating_to_v1.rst:916
+msgid ":func:`~ext.commands.is_owner` uses the :meth:`Client.application_info` endpoint by default to fetch owner ID."
+msgstr ":func:`~ext.commands.is_owner` domyślnie używa punktu końcowego :meth:`Client.application_info` do pobierania ID właściciela."
+
+#: ../../migrating_to_v1.rst:918
+msgid "This is actually powered by a different function, :meth:`~ext.commands.Bot.is_owner`."
+msgstr "Jest to w rzeczywistości zasilane przez inną funkcję, :meth:`~ext.commands.Bot.is_owner`."
+
+#: ../../migrating_to_v1.rst:919
+msgid "You can set the owner ID yourself by setting :attr:`.Bot.owner_id`."
+msgstr "Możesz samodzielnie ustawić ID właściciela, ustawiając :attr:`.Bot.owner_id`."
+
+#: ../../migrating_to_v1.rst:921
+msgid ":func:`~ext.commands.is_nsfw` checks if the channel the command is in is a NSFW channel."
+msgstr ":func:`~ext.commands.is_nsfw` sprawdza, czy kanał, w którym znajduje się komenda, jest kanałem NSFW."
+
+#: ../../migrating_to_v1.rst:923
+msgid "This is powered by the new :meth:`TextChannel.is_nsfw` method."
+msgstr "Jest to zasilane przez nową metodę :meth:`TextChannel.is_nsfw`."
+
+#: ../../migrating_to_v1.rst:928
+msgid "All command extension events have changed."
+msgstr "Wszystkie zdarzenia rozszerzenia komend zostały zmienione."
+
+#: ../../migrating_to_v1.rst:942
+msgid "The extraneous ``command`` parameter in :func:`.on_command` and :func:`.on_command_completion` have been removed. The :class:`~ext.commands.Command` instance was not kept up-to date so it was incorrect. In order to get the up to date :class:`~ext.commands.Command` instance, use the :attr:`.Context.command` attribute."
+msgstr "Zbędny parametr ``command`` w :func:`.on_command` i :func:`.on_command_completion` został usunięty. Instancja :class:`~ext.commands.Command` nie była aktualizowana, więc była niepoprawna. Aby uzyskać aktualną instancję :class:`~ext.commands.Command`, użyj atrybutu :attr:`.Context.command`."
+
+#: ../../migrating_to_v1.rst:947
+msgid "The error handlers, either :meth:`~ext.commands.Command.error` or :func:`.on_command_error`, have been re-ordered to use the :class:`~ext.commands.Context` as its first parameter to be consistent with other events and commands."
+msgstr "Obsługi błędów, zarówno :meth:`~ext.commands.Command.error`, jak i :func:`.on_command_error`, zostały zmienione w kolejności, aby używać :class:`~ext.commands.Context` jako pierwszego parametru, co zapewnia spójność z innymi zdarzeniami i komendami."
+
+#: ../../migrating_to_v1.rst:952
+msgid "HelpFormatter and Help Command Changes"
+msgstr "Zmiany w HelpFormatter i komendzie pomocy"
+
+#: ../../migrating_to_v1.rst:954
+msgid "The ``HelpFormatter`` class has been removed. It has been replaced with a :class:`~.commands.HelpCommand` class. This class now stores all the command handling and processing of the help command."
+msgstr "Klasa ``HelpFormatter`` została usunięta. Została zastąpiona klasą :class:`~.commands.HelpCommand`. Ta klasa przechowuje teraz całą obsługę komend i przetwarzanie komendy pomocy."
+
+#: ../../migrating_to_v1.rst:956
+msgid "The help command is now stored in the :attr:`.Bot.help_command` attribute. As an added extension, you can disable the help command completely by assigning the attribute to ``None`` or passing it at ``__init__`` as ``help_command=None``."
+msgstr "Komenda pomocy jest teraz przechowywana w atrybucie :attr:`.Bot.help_command`. Jako dodatkowe rozszerzenie, możesz całkowicie wyłączyć komendę pomocy, przypisując atrybut do ``None`` lub przekazując go w ``__init__`` jako ``help_command=None``."
+
+#: ../../migrating_to_v1.rst:958
+msgid "The new interface allows the help command to be customised through special methods that can be overridden."
+msgstr "Nowy interfejs pozwala na dostosowanie komendy pomocy za pomocą specjalnych metod, które można nadpisać."
+
+#: ../../migrating_to_v1.rst:960
+msgid ":meth:`.HelpCommand.send_bot_help`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:961
+msgid "Called when the user requested for help with the entire bot."
+msgstr "Wywoływane, gdy użytkownik poprosił o pomoc dotyczącą całego bota."
+
+#: ../../migrating_to_v1.rst:962
+msgid ":meth:`.HelpCommand.send_cog_help`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:963
+msgid "Called when the user requested for help with a specific cog."
+msgstr "Wywoływane, gdy użytkownik poprosił o pomoc dotyczącą konkretnego coga."
+
+#: ../../migrating_to_v1.rst:964
+msgid ":meth:`.HelpCommand.send_group_help`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:965
+msgid "Called when the user requested for help with a :class:`~.commands.Group`"
+msgstr "Wywoływane, gdy użytkownik poprosił o pomoc dotyczącą :class:`~.commands.Group`."
+
+#: ../../migrating_to_v1.rst:966
+msgid ":meth:`.HelpCommand.send_command_help`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:967
+msgid "Called when the user requested for help with a :class:`~.commands.Command`"
+msgstr "Wywoływane, gdy użytkownik poprosił o pomoc dotyczącą :class:`~.commands.Command`."
+
+#: ../../migrating_to_v1.rst:968
+msgid ":meth:`.HelpCommand.get_destination`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:969
+msgid "Called to know where to send the help messages. Useful for deciding whether to DM or not."
+msgstr "Wywoływane, aby dowiedzieć się, gdzie wysłać wiadomości pomocy. Przydatne do decydowania, czy wysłać DM, czy nie."
+
+#: ../../migrating_to_v1.rst:970
+msgid ":meth:`.HelpCommand.command_not_found`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:971
+msgid "A function (or coroutine) that returns a presentable no command found string."
+msgstr "Funkcja (lub korutyna), która zwraca czytelny ciąg znaków informujący o braku komendy."
+
+#: ../../migrating_to_v1.rst:972
+msgid ":meth:`.HelpCommand.subcommand_not_found`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:973
+msgid "A function (or coroutine) that returns a string when a subcommand is not found."
+msgstr "Funkcja (lub korutyna), która zwraca ciąg znaków, gdy podkomenda nie zostanie znaleziona."
+
+#: ../../migrating_to_v1.rst:975
+msgid ":meth:`.HelpCommand.send_error_message`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:975
+msgid "A coroutine that gets passed the result of :meth:`.HelpCommand.command_not_found` and :meth:`.HelpCommand.subcommand_not_found`."
+msgstr "Korutyna, która otrzymuje wynik :meth:`.HelpCommand.command_not_found` i :meth:`.HelpCommand.subcommand_not_found`."
+
+#: ../../migrating_to_v1.rst:976
+msgid "By default it just sends the message. But you can, for example, override it to put it in an embed."
+msgstr "Domyślnie po prostu wysyła wiadomość. Ale możesz, na przykład, nadpisać ją, aby umieścić ją w osadzeniu."
+
+#: ../../migrating_to_v1.rst:977
+msgid ":meth:`.HelpCommand.on_help_command_error`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:978
+msgid "The :ref:`error handler <ext_commands_error_handler>` for the help command if you want to add one."
+msgstr ":ref:`Obsługa błędów <ext_commands_error_handler>` dla komendy pomocy, jeśli chcesz ją dodać."
+
+#: ../../migrating_to_v1.rst:980
+msgid ":meth:`.HelpCommand.prepare_help_command`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:980
+msgid "A coroutine that is called right before the help command processing is done."
+msgstr "Korutyna, która jest wywoływana tuż przed zakończeniem przetwarzania komendy pomocy."
+
+#: ../../migrating_to_v1.rst:982
+msgid "Certain subclasses can implement more customisable methods."
+msgstr "Niektóre podklasy mogą implementować bardziej konfigurowalne metody."
+
+#: ../../migrating_to_v1.rst:984
+msgid "The old ``HelpFormatter`` was replaced with :class:`~.commands.DefaultHelpCommand`\\, which implements all of the logic of the old help command. The customisable methods can be found in the accompanying documentation."
+msgstr "Stary ``HelpFormatter`` został zastąpiony przez :class:`~.commands.DefaultHelpCommand`, który implementuje całą logikę starej komendy pomocy. Konfigurowalne metody można znaleźć w dołączonej dokumentacji."
+
+#: ../../migrating_to_v1.rst:986
+msgid "The library now provides a new more minimalistic :class:`~.commands.HelpCommand` implementation that doesn't take as much space, :class:`~.commands.MinimalHelpCommand`. The customisable methods can also be found in the accompanying documentation."
+msgstr "Biblioteka udostępnia teraz nową, bardziej minimalistyczną implementację :class:`~.commands.HelpCommand`, która nie zajmuje tyle miejsca, :class:`~.commands.MinimalHelpCommand`. Konfigurowalne metody można również znaleźć w dołączonej dokumentacji."
+
+#: ../../migrating_to_v1.rst:988
+msgid "A frequent request was if you could associate a help command with a cog. The new design allows for dynamically changing of cog through binding it to the :attr:`.HelpCommand.cog` attribute. After this assignment the help command will pretend to be part of the cog and everything should work as expected. When the cog is unloaded then the help command will be \"unbound\" from the cog."
+msgstr "Częstym zapytaniem było, czy można powiązać komendę pomocy z cogiem. Nowy projekt pozwala na dynamiczną zmianę coga poprzez przypisanie go do atrybutu :attr:`.HelpCommand.cog`. Po tym przypisaniu komenda pomocy będzie udawać, że jest częścią coga i wszystko powinno działać zgodnie z oczekiwaniami. Gdy cog zostanie rozładowany, komenda pomocy zostanie „odwiązana” od coga."
+
+#: ../../migrating_to_v1.rst:990
+msgid "For example, to implement a :class:`~.commands.HelpCommand` in a cog, the following snippet can be used."
+msgstr "Na przykład, aby zaimplementować :class:`~.commands.HelpCommand` w cogu, można użyć poniższego fragmentu kodu."
+
+#: ../../migrating_to_v1.rst:1007
+msgid "For more information, check out the relevant :ref:`documentation <ext_commands_help_command>`."
+msgstr "Więcej informacji znajdziesz w odpowiedniej :ref:`dokumentacji <ext_commands_help_command>`."
+
+#: ../../migrating_to_v1.rst:1010
+msgid "Cog Changes"
+msgstr "Zmiany w Cogach"
+
+#: ../../migrating_to_v1.rst:1012
+msgid "Cogs have completely been revamped. They are documented in :ref:`ext_commands_cogs` as well."
+msgstr "Cogi zostały całkowicie przebudowane. Są one również udokumentowane w :ref:`ext_commands_cogs`."
+
+#: ../../migrating_to_v1.rst:1014
+msgid "Cogs are now required to have a base class, :class:`~.commands.Cog` for future proofing purposes. This comes with special methods to customise some behaviour."
+msgstr "Cogi muszą teraz posiadać klasę bazową :class:`~.commands.Cog` w celu zapewnienia przyszłej kompatybilności. Wiąże się to ze specjalnymi metodami do dostosowywania niektórych zachowań."
+
+#: ../../migrating_to_v1.rst:1016
+msgid ":meth:`.Cog.cog_unload`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1017
+msgid "This is called when a cog needs to do some cleanup, such as cancelling a task."
+msgstr "Jest to wywoływane, gdy cog musi wykonać jakieś czyszczenie, np. anulowanie zadania."
+
+#: ../../migrating_to_v1.rst:1018
+msgid ":meth:`.Cog.bot_check_once`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1019
+msgid "This registers a :meth:`.Bot.check_once` check."
+msgstr "Rejestruje to sprawdzenie :meth:`.Bot.check_once`."
+
+#: ../../migrating_to_v1.rst:1020
+msgid ":meth:`.Cog.bot_check`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1021
+msgid "This registers a regular :meth:`.Bot.check` check."
+msgstr "Rejestruje to regularne sprawdzenie :meth:`.Bot.check`."
+
+#: ../../migrating_to_v1.rst:1022
+msgid ":meth:`.Cog.cog_check`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1023
+msgid "This registers a check that applies to every command in the cog."
+msgstr "Rejestruje to sprawdzenie, które dotyczy każdej komendy w cogu."
+
+#: ../../migrating_to_v1.rst:1024
+msgid ":meth:`.Cog.cog_command_error`"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1025
+msgid "This is a special error handler that is called whenever an error happens inside the cog."
+msgstr "To specjalna funkcja obsługi błędów, która jest wywoływana za każdym razem, gdy wewnątrz coga wystąpi błąd."
+
+#: ../../migrating_to_v1.rst:1027
+msgid ":meth:`.Cog.cog_before_invoke` and :meth:`.Cog.cog_after_invoke`"
+msgstr ":meth:`.Cog.cog_before_invoke` oraz :meth:`.Cog.cog_after_invoke`"
+
+#: ../../migrating_to_v1.rst:1027
+msgid "A special method that registers a cog before and after invoke hook. More information can be found in :ref:`migrating_1_0_before_after_hook`."
+msgstr "Specjalna metoda, która rejestruje hooki przed i po wywołaniu (invoke) dla coga. Więcej informacji można znaleźć w :ref:`migrating_1_0_before_after_hook`."
+
+#: ../../migrating_to_v1.rst:1029
+msgid "Those that were using listeners, such as ``on_message`` inside a cog will now have to explicitly mark them as such using the :meth:`.commands.Cog.listener` decorator."
+msgstr "Osoby używające listenerów (takich jak ``on_message``) wewnątrz coga, muszą teraz jawnie je oznaczyć za pomocą dekoratora :meth:`.commands.Cog.listener`."
+
+#: ../../migrating_to_v1.rst:1031
+msgid "Along with that, cogs have gained the ability to have custom names through specifying it in the class definition line. More options can be found in the metaclass that facilitates all this, :class:`.commands.CogMeta`."
+msgstr "Oprócz tego, cogi zyskały możliwość posiadania niestandardowych nazw poprzez ich zdefiniowanie w linii definicji klasy. Więcej opcji można znaleźć w metaklasie ułatwiającej to wszystko: :class:`.commands.CogMeta`."
+
+#: ../../migrating_to_v1.rst:1033
+msgid "An example cog with every special method registered and a custom name is as follows:"
+msgstr "Poniżej znajduje się przykład coga z zarejestrowanymi wszystkimi specjalnymi metodami oraz niestandardową nazwą:"
+
+#: ../../migrating_to_v1.rst:1070
+msgid "Before and After Invocation Hooks"
+msgstr "Hooki przed i po wywołaniu (Invocation Hooks)"
+
+#: ../../migrating_to_v1.rst:1072
+msgid "Commands have gained new before and after invocation hooks that allow you to do an action before and after a command is run."
+msgstr "Komendy zyskały nowe hooki wykonywane przed i po wywołaniu, które pozwalają na podjęcie określonej akcji przed i po uruchomieniu komendy."
+
+#: ../../migrating_to_v1.rst:1075
+msgid "They take a single parameter, :class:`~ext.commands.Context` and they must be a coroutine."
+msgstr "Przyjmują one pojedynczy parametr: :class:`~ext.commands.Context` i muszą być korutynami."
+
+#: ../../migrating_to_v1.rst:1077
+msgid "They are on a global, per-cog, or per-command basis."
+msgstr "Mogą być definiowane globalnie, dla całego coga lub dla konkretnej komendy."
+
+#: ../../migrating_to_v1.rst:1094
+msgid "The after invocation is hook always called, **regardless of an error in the command**. This makes it ideal for some error handling or clean up of certain resources such a database connection."
+msgstr "Hook po wywołaniu (after invocation) jest wywoływany zawsze, **niezależnie od wystąpienia błędu w komendzie**. To czyni go idealnym do obsługi niektórych błędów lub czyszczenia zasobów, takich jak połączenie z bazą danych."
+
+#: ../../migrating_to_v1.rst:1097
+msgid "The per-command registration is as follows: ::"
+msgstr "Rejestracja dla konkretnej komendy wygląda następująco: ::"
+
+#: ../../migrating_to_v1.rst:1113
+msgid "The special cog method for these is :meth:`.Cog.cog_before_invoke` and :meth:`.Cog.cog_after_invoke`, e.g.:"
+msgstr "Specjalne metody coga przeznaczone do tego celu to :meth:`.Cog.cog_before_invoke` oraz :meth:`.Cog.cog_after_invoke`, np.:"
+
+#: ../../migrating_to_v1.rst:1128
+msgid "To check if a command failed in the after invocation hook, you can use :attr:`.Context.command_failed`."
+msgstr "Aby sprawdzić w haku po wywołaniu, czy komenda zakończyła się błędem, możesz użyć :attr:`.Context.command_failed`."
+
+#: ../../migrating_to_v1.rst:1131
+msgid "The invocation order is as follows:"
+msgstr "Kolejność wywoływania jest następująca:"
+
+#: ../../migrating_to_v1.rst:1133
+msgid "Command local before invocation hook"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1134
+msgid "Cog local before invocation hook"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1135
+msgid "Global before invocation hook"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1136
+msgid "The actual command"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1137
+msgid "Command local after invocation hook"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1138
+msgid "Cog local after invocation hook"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1139
+msgid "Global after invocation hook"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1142
+msgid "Converter Changes"
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1144
+msgid "Prior to v1.0, a converter was a type hint that could be a callable that could be invoked with a singular argument denoting the argument passed by the user as a string."
+msgstr "Przed wersją 1.0 konwerter był podpowiedzią typu (type hint), która mogła być obiektem wywoływalnym (callable), przyjmującym pojedynczy argument będący ciągiem znaków przekazanym przez użytkownika."
+
+#: ../../migrating_to_v1.rst:1147
+msgid "This system was eventually expanded to support a :class:`~ext.commands.Converter` system to allow plugging in the :class:`~ext.commands.Context` and do more complicated conversions such as the built-in \"discord\" converters."
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1151
+msgid "In v1.0 this converter system was revamped to allow instances of :class:`~ext.commands.Converter` derived classes to be passed. For consistency, the :meth:`~ext.commands.Converter.convert` method was changed to always be a coroutine and will now take the two arguments as parameters."
+msgstr "W wersji 1.0 system konwerterów został przebudowany tak, aby umożliwić przekazywanie instancji klas pochodnych od :class:`~ext.commands.Converter`. Dla zachowania spójności metoda :meth:`~ext.commands.Converter.convert` stała się zawsze korutyną i przyjmuje teraz dwa argumenty jako parametry."
+
+#: ../../migrating_to_v1.rst:1155
+msgid "Essentially, before: ::"
+msgstr "Zasadniczo, przed: ::"
+
+#: ../../migrating_to_v1.rst:1167
+msgid "The command framework also got a couple new converters:"
+msgstr "Framework komend otrzymał również kilka nowych konwerterów:"
+
+#: ../../migrating_to_v1.rst:1169
+msgid ":class:`~ext.commands.clean_content` this is akin to :attr:`Message.clean_content` which scrubs mentions."
+msgstr ":class:`~ext.commands.clean_content` – działa podobnie do :attr:`Message.clean_content`, usuwając wzmianki."
+
+#: ../../migrating_to_v1.rst:1170
+msgid ":class:`~ext.commands.UserConverter` will now appropriately convert :class:`User` only."
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1171
+msgid "``ChannelConverter`` is now split into two different converters."
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1173
+msgid ":class:`~ext.commands.TextChannelConverter` for :class:`TextChannel`."
+msgstr ""
+
+#: ../../migrating_to_v1.rst:1174
+msgid ":class:`~ext.commands.VoiceChannelConverter` for :class:`VoiceChannel`."
+msgstr ""
+

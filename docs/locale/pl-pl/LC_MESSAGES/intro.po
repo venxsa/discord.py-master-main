@@ -1,0 +1,126 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: discordpy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-21 01:17+0000\n"
+"PO-Revision-Date: 2026-02-06 15:08\n"
+"Last-Translator: Antigravity\n"
+"Language-Team: Polish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Crowdin-Project: discordpy\n"
+"X-Crowdin-Project-ID: 362783\n"
+"X-Crowdin-Language: pl\n"
+"X-Crowdin-File: intro.pot\n"
+"X-Crowdin-File-ID: 80\n"
+"Language: pl_PL\n"
+
+#: ../../intro.rst:8
+msgid "Introduction"
+msgstr "Wprowadzenie"
+
+#: ../../intro.rst:10
+msgid "This is the documentation for discord.py, a library for Python to aid in creating applications that utilise the Discord API."
+msgstr "To jest dokumentacja discord.py, biblioteki dla języka Python wspomagającej tworzenie aplikacji korzystających z API Discorda."
+
+#: ../../intro.rst:14
+msgid "Prerequisites"
+msgstr "Wymagania wstępne"
+
+#: ../../intro.rst:16
+msgid "discord.py works with Python 3.8 or higher. Support for earlier versions of Python is not provided. Python 2.7 or lower is not supported. Python 3.7 or lower is not supported."
+msgstr "discord.py współpracuje z Pythonem w wersji 3.8 lub nowszej. Wsparcie dla starszych wersji Pythona nie jest zapewnione. Python 2.7 lub starszy nie jest obsługiwany. Python 3.7 lub starszy nie jest obsługiwany."
+
+#: ../../intro.rst:23
+msgid "Installing"
+msgstr "Instalacja"
+
+#: ../../intro.rst:25
+msgid "You can get the library directly from PyPI: ::"
+msgstr "Bibliotekę można pobrać bezpośrednio z PyPI: ::"
+
+#: ../../intro.rst:29
+msgid "If you are using Windows, then the following should be used instead: ::"
+msgstr "Jeśli korzystasz z systemu Windows, należy użyć następującego polecenia: ::"
+
+#: ../../intro.rst:34
+msgid "To get voice support, you should use ``discord.py[voice]`` instead of ``discord.py``, e.g. ::"
+msgstr "Aby uzyskać wsparcie dla głosu, należy użyć ``discord.py[voice]`` zamiast ``discord.py``, np.: ::"
+
+#: ../../intro.rst:38
+msgid "On Linux environments, installing voice requires getting the following dependencies:"
+msgstr "W środowiskach Linux instalacja obsługi głosu wymaga pobrania następujących zależności:"
+
+#: ../../intro.rst:40
+msgid "`libffi <https://github.com/libffi/libffi>`_"
+msgstr "`libffi <https://github.com/libffi/libffi>`_"
+
+#: ../../intro.rst:41
+msgid "`libnacl <https://github.com/saltstack/libnacl>`_"
+msgstr "`libnacl <https://github.com/saltstack/libnacl>`_"
+
+#: ../../intro.rst:42
+msgid "`python3-dev <https://packages.debian.org/python3-dev>`_"
+msgstr "`python3-dev <https://packages.debian.org/python3-dev>`_"
+
+#: ../../intro.rst:44
+msgid "For a Debian-based system, the following command will get these dependencies:"
+msgstr "W systemach opartych na Debianie poniższe polecenie pozwoli pobrać te zależności:"
+
+#: ../../intro.rst:50
+msgid "Remember to check your permissions!"
+msgstr "Pamiętaj o sprawdzeniu swoich uprawnień!"
+
+#: ../../intro.rst:53
+msgid "Virtual Environments"
+msgstr "Środowiska wirtualne"
+
+#: ../../intro.rst:55
+msgid "Sometimes you want to keep libraries from polluting system installs or use a different version of libraries than the ones installed on the system. You might also not have permissions to install libraries system-wide. For this purpose, the standard library as of Python 3.3 comes with a concept called \"Virtual Environment\"s to help maintain these separate versions."
+msgstr "Czasami chcesz uniknąć zaśmiecania instalacji systemowych lub użyć innej wersji bibliotek niż te zainstalowane w systemie. Możesz również nie mieć uprawnień do instalowania bibliotek w całym systemie. W tym celu biblioteka standardowa od wersji Python 3.3 zawiera koncepcję zwaną „Środowiskami Wirtualnymi” (Virtual Environments), która pomaga w utrzymaniu tych oddzielnych wersji."
+
+#: ../../intro.rst:60
+msgid "A more in-depth tutorial is found on :doc:`py:tutorial/venv`."
+msgstr "Bardziej szczegółowy samouczek znajduje się w :doc:`py:tutorial/venv`."
+
+#: ../../intro.rst:62
+msgid "However, for the quick and dirty:"
+msgstr "Jednak w skrócie:"
+
+#: ../../intro.rst:64
+msgid "Go to your project's working directory:"
+msgstr "Przejdź do katalogu roboczego swojego projektu:"
+
+#: ../../intro.rst:71
+msgid "Activate the virtual environment:"
+msgstr "Aktywuj środowisko wirtualne:"
+
+#: ../../intro.rst:77
+msgid "On Windows you activate it with:"
+msgstr "W systemie Windows aktywujesz je za pomocą:"
+
+#: ../../intro.rst:83
+msgid "Use pip like usual:"
+msgstr "Używaj pip jak zwykle:"
+
+#: ../../intro.rst:89
+msgid "Congratulations. You now have a virtual environment all set up."
+msgstr "Gratulacje. Masz teraz w pełni skonfigurowane środowisko wirtualne."
+
+#: ../../intro.rst:93
+msgid "Scripts executed with ``py -3`` will ignore any currently active virtual environment, as the ``-3`` specifies a global scope."
+msgstr "Skrypty wykonywane za pomocą ``py -3`` zignorują każde aktualnie aktywne środowisko wirtualne, ponieważ ``-3`` określa zakres globalny."
+
+#: ../../intro.rst:97
+msgid "Basic Concepts"
+msgstr "Podstawowe pojęcia"
+
+#: ../../intro.rst:99
+msgid "discord.py revolves around the concept of :ref:`events <discord-api-events>`. An event is something you listen to and then respond to. For example, when a message happens, you will receive an event about it that you can respond to."
+msgstr "discord.py opiera się na koncepcji :ref:`zdarzeń <discord-api-events>`. Zdarzenie to coś, czego nasłuchujesz, a następnie na co odpowiadasz. Na przykład, gdy pojawi się wiadomość, otrzymasz o tym zdarzenie, na które możesz zareagować."
+
+#: ../../intro.rst:103
+msgid "A quick example to showcase how events work:"
+msgstr "Szybki przykład pokazujący, jak działają zdarzenia:"

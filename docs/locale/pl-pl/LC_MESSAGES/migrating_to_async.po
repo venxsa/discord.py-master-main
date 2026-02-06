@@ -1,0 +1,363 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: discordpy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-21 01:17+0000\n"
+"PO-Revision-Date: 2024-04-17 02:43\n"
+"Last-Translator: \n"
+"Language-Team: Polish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Crowdin-Project: discordpy\n"
+"X-Crowdin-Project-ID: 362783\n"
+"X-Crowdin-Language: pl\n"
+"X-Crowdin-File: migrating_to_async.pot\n"
+"X-Crowdin-File-ID: 48\n"
+"Language: pl_PL\n"
+
+#: ../../migrating_to_async.rst:8
+msgid "Migrating to v0.10.0"
+msgstr "Migracja do wersji 0.10.0"
+
+#: ../../migrating_to_async.rst:10
+msgid "v0.10.0 is one of the biggest breaking changes in the library due to massive fundamental changes in how the library operates."
+msgstr "Wersja 0.10.0 to jedna z największych zmian wprowadzających niekompatybilność w historii biblioteki, ze względu na ogromne, fundamentalne zmiany w sposobie jej działania."
+
+#: ../../migrating_to_async.rst:13
+msgid "The biggest major change is that the library has dropped support to all versions prior to Python 3.4.2. This was made to support :mod:`asyncio`, in which more detail can be seen :issue:`in the corresponding issue <50>`. To reiterate this, the implication is that **python version 2.7 and 3.3 are no longer supported**."
+msgstr "Największą kluczową zmianą jest to, że biblioteka przestała wspierać wszystkie wersje Pythona wcześniejsze niż 3.4.2. Zrobiono to, aby wspierać :mod:`asyncio`. Więcej szczegółów można znaleźć :issue:`w odpowiednim zgłoszeniu <50>`. Podsumowując: **wersje Pythona 2.7 oraz 3.3 nie są już wspierane**."
+
+#: ../../migrating_to_async.rst:18
+msgid "Below are all the other major changes from v0.9.0 to v0.10.0."
+msgstr "Poniżej znajdują się wszystkie inne istotne zmiany wprowadzone między wersjami 0.9.0 a 0.10.0."
+
+#: ../../migrating_to_async.rst:21
+msgid "Event Registration"
+msgstr "Rejestracja zdarzeń"
+
+#: ../../migrating_to_async.rst:23
+msgid "All events before were registered using :meth:`Client.event`. While this is still possible, the events must be decorated with ``@asyncio.coroutine``."
+msgstr "Wcześniej wszystkie zdarzenia były rejestrowane za pomocą :meth:`Client.event`. Choć nadal jest to możliwe, zdarzenia muszą być teraz udekorowane ``@asyncio.coroutine``."
+
+#: ../../migrating_to_async.rst:26
+#: ../../migrating_to_async.rst:71
+#: ../../migrating_to_async.rst:105
+#: ../../migrating_to_async.rst:166
+msgid "Before:"
+msgstr "Przed:"
+
+#: ../../migrating_to_async.rst:34
+#: ../../migrating_to_async.rst:83
+#: ../../migrating_to_async.rst:111
+#: ../../migrating_to_async.rst:174
+#: ../../migrating_to_async.rst:284
+msgid "After:"
+msgstr "Po:"
+
+#: ../../migrating_to_async.rst:43
+msgid "Or in Python 3.5+:"
+msgstr "Lub w Pythonie 3.5+:"
+
+#: ../../migrating_to_async.rst:51
+msgid "Because there is a lot of typing, a utility decorator (:meth:`Client.async_event`) is provided for easier registration. For example:"
+msgstr "Ponieważ wymaga to sporo pisania, dostarczono dekorator pomocniczy (:meth:`Client.async_event`) ułatwiający rejestrację. Na przykład:"
+
+#: ../../migrating_to_async.rst:61
+msgid "Be aware however, that this is still a coroutine and your other functions that are coroutines must be decorated with ``@asyncio.coroutine`` or be ``async def``."
+msgstr "Pamiętaj jednak, że nadal jest to korutyna, a inne funkcje będące korutynami muszą być udekorowane ``@asyncio.coroutine`` lub zdefiniowane jako ``async def``."
+
+#: ../../migrating_to_async.rst:65
+msgid "Event Changes"
+msgstr "Zmiany w zdarzeniach"
+
+#: ../../migrating_to_async.rst:67
+msgid "Some events in v0.9.0 were considered pretty useless due to having no separate states. The main events that were changed were the ``_update`` events since previously they had no context on what was changed."
+msgstr "Niektóre zdarzenia w wersji 0.9.0 były uważane za dość bezużyteczne z powodu braku oddzielnych stanów. Główne zmiany dotyczyły zdarzeń typu ``_update``, ponieważ wcześniej nie zawierały informacji o tym, co dokładnie uległo zmianie."
+
+#: ../../migrating_to_async.rst:93
+msgid "Note that ``on_status`` was removed. If you want its functionality, use :func:`on_member_update`. See :ref:`discord-api-events` for more information. Other removed events include ``on_socket_closed``, ``on_socket_receive``, and ``on_socket_opened``."
+msgstr "Zauważ, że zdarzenie ``on_status`` zostało usunięte. Jeśli potrzebujesz jego funkcjonalności, użyj :func:`on_member_update`. Zobacz :ref:`discord-api-events`, aby uzyskać więcej informacji. Inne usunięte zdarzenia to ``on_socket_closed``, ``on_socket_receive`` oraz ``on_socket_opened``."
+
+#: ../../migrating_to_async.rst:98
+msgid "Coroutines"
+msgstr "Korutyny"
+
+#: ../../migrating_to_async.rst:100
+msgid "The biggest change that the library went through is that almost every function in :class:`Client` was changed to be a `coroutine <py:library/asyncio-task.html>`_. Functions that are marked as a coroutine in the documentation must be awaited from or yielded from in order for the computation to be done. For example..."
+msgstr "Największą zmianą w bibliotece było to, że prawie każda funkcja w klasie :class:`Client` stała się `korutyną <py:library/asyncio-task.html>`_. Funkcje oznaczone w dokumentacji jako korutyny muszą być wywoływane za pomocą ``await`` lub ``yield from``, aby zostały wykonane. Na przykład..."
+
+#: ../../migrating_to_async.rst:120
+msgid "In order for you to ``yield from`` or ``await`` a coroutine then your function must be decorated with ``@asyncio.coroutine`` or ``async def``."
+msgstr "Abyś mógł użyć ``yield from`` lub ``await`` przy korutynie, Twoja funkcja musi być udekorowana ``@asyncio.coroutine`` lub zdefiniowana jako ``async def``."
+
+#: ../../migrating_to_async.rst:124
+msgid "Iterables"
+msgstr "Obiekty iterowalne (Iterables)"
+
+#: ../../migrating_to_async.rst:126
+msgid "For performance reasons, many of the internal data structures were changed into a dictionary to support faster lookup. As a consequence, this meant that some lists that were exposed via the API have changed into iterables and not sequences. In short, this means that certain attributes now only support iteration and not any of the sequence functions."
+msgstr "Ze względów wydajnościowych wiele wewnętrznych struktur danych zostało zmienionych na słowniki, aby wspierać szybsze wyszukiwanie. W rezultacie niektóre listy udostępniane przez API stały się obiektami iterowalnymi (iterables), a nie sekwencjami. Krótko mówiąc: niektóre atrybuty wspierają teraz tylko iterację, a nie funkcje typowe dla sekwencji."
+
+#: ../../migrating_to_async.rst:131
+msgid "The affected attributes are as follows:"
+msgstr "Zmiany dotyczą następujących atrybutów:"
+
+#: ../../migrating_to_async.rst:133
+msgid ":attr:`Client.servers`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:134
+msgid ":attr:`Client.private_channels`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:135
+msgid ":attr:`Server.channels`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:136
+msgid ":attr:`Server.members`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:138
+msgid "Some examples of previously valid behaviour that is now invalid"
+msgstr "Przykłady zachowań, które wcześniej były poprawne, a teraz są nieprawidłowe:"
+
+#: ../../migrating_to_async.rst:145
+msgid "Since they are no longer :obj:`list`\\s, they no longer support indexing or any operation other than iterating. In order to get the old behaviour you should explicitly cast it to a list."
+msgstr "Ponieważ nie są to już listy (:obj:`list`), nie wspierają indeksowania ani innych operacji poza iteracją. Aby uzyskać dawne zachowanie, należy jawnie rzutować obiekt na listę."
+
+#: ../../migrating_to_async.rst:155
+msgid "Due to internal changes of the structure, the order you receive the data in is not in a guaranteed order."
+msgstr "Ze względu na wewnętrzne zmiany struktury, kolejność otrzymywanych danych nie jest gwarantowana."
+
+#: ../../migrating_to_async.rst:159
+msgid "Enumerations"
+msgstr "Wyliczenia (Enumerations)"
+
+#: ../../migrating_to_async.rst:161
+msgid "Due to dropping support for versions lower than Python 3.4.2, the library can now use :doc:`py:library/enum` in places where it makes sense."
+msgstr "Dzięki zaprzestaniu wspierania wersji starszych niż Python 3.4.2, biblioteka może teraz korzystać z :doc:`py:library/enum` tam, gdzie ma to sens."
+
+#: ../../migrating_to_async.rst:164
+msgid "The common places where this was changed was in the server region, member status, and channel type."
+msgstr "Typowe miejsca, w których wprowadzono te zmiany, to regiony serwerów, statusy członków oraz typy kanałów."
+
+#: ../../migrating_to_async.rst:182
+msgid "The main reason for this change was to reduce the use of finicky strings in the API as this could give users a false sense of power. More information can be found in the :ref:`discord-api-enums` page."
+msgstr "Głównym powodem tej zmiany była chęć ograniczenia użycia kłopotliwych ciągów znaków (strings) w API, co mogło dawać użytkownikom mylne poczucie kontroli. Więcej informacji znajdziesz na stronie :ref:`discord-api-enums`."
+
+#: ../../migrating_to_async.rst:186
+msgid "Properties"
+msgstr "Właściwości (Properties)"
+
+#: ../../migrating_to_async.rst:188
+msgid "A lot of function calls that returned constant values were changed into Python properties for ease of use in format strings."
+msgstr "Wiele wywołań funkcji zwracających stałe wartości zostało zmienionych na właściwości Pythona, aby ułatwić ich użycie w ciągach formatujących."
+
+#: ../../migrating_to_async.rst:191
+msgid "The following functions were changed into properties:"
+msgstr "Następujące funkcje zostały zmienione na właściwości:"
+
+#: ../../migrating_to_async.rst:194
+#: ../../migrating_to_async.rst:223
+#: ../../migrating_to_async.rst:238
+msgid "Before"
+msgstr "Przed"
+
+#: ../../migrating_to_async.rst:194
+#: ../../migrating_to_async.rst:223
+#: ../../migrating_to_async.rst:238
+msgid "After"
+msgstr "Po"
+
+#: ../../migrating_to_async.rst:196
+msgid "``User.avatar_url()``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:196
+msgid ":attr:`User.avatar_url`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:198
+msgid "``User.mention()``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:198
+msgid ":attr:`User.mention`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:200
+msgid "``Channel.mention()``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:200
+msgid ":attr:`Channel.mention`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:202
+msgid "``Channel.is_default_channel()``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:202
+msgid ":attr:`Channel.is_default`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:204
+msgid "``Role.is_everyone()``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:204
+msgid ":attr:`Role.is_everyone`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:206
+msgid "``Server.get_default_role()``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:206
+msgid ":attr:`Server.default_role`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:208
+msgid "``Server.icon_url()``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:208
+msgid ":attr:`Server.icon_url`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:210
+msgid "``Server.get_default_channel()``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:210
+msgid ":attr:`Server.default_channel`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:212
+msgid "``Message.get_raw_mentions()``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:212
+msgid ":attr:`Message.raw_mentions`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:214
+msgid "``Message.get_raw_channel_mentions()``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:214
+msgid ":attr:`Message.raw_channel_mentions`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:218
+msgid "Member Management"
+msgstr "Zarządzanie członkami"
+
+#: ../../migrating_to_async.rst:220
+msgid "Functions that involved banning and kicking were changed."
+msgstr "Zmieniono funkcje związane z banowaniem i wyrzucaniem użytkowników."
+
+#: ../../migrating_to_async.rst:225
+msgid "``Client.ban(server, user)``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:225
+msgid "``Client.ban(member)``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:227
+msgid "``Client.kick(server, user)``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:227
+msgid "``Client.kick(member)``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:233
+msgid "Renamed Functions"
+msgstr "Zmiana nazw funkcji"
+
+#: ../../migrating_to_async.rst:235
+msgid "Functions have been renamed."
+msgstr "Funkcje, których nazwy uległy zmianie:"
+
+#: ../../migrating_to_async.rst:240
+msgid "``Client.set_channel_permissions``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:240
+#: ../../migrating_to_async.rst:263
+msgid ":meth:`Client.edit_channel_permissions`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:243
+msgid "All the :class:`Permissions` related attributes have been renamed and the `can_` prefix has been dropped. So for example, ``can_manage_messages`` has become ``manage_messages``."
+msgstr "Wszystkie atrybuty związane z klasą :class:`Permissions` zostały przemianowane – usunięto prefiks `can_`. Przykładowo, ``can_manage_messages`` to teraz ``manage_messages``."
+
+#: ../../migrating_to_async.rst:247
+msgid "Forced Keyword Arguments"
+msgstr "Wymuszone argumenty nazwane"
+
+#: ../../migrating_to_async.rst:249
+msgid "Since 3.0+ of Python, we can now force questions to take in forced keyword arguments. A keyword argument is when you explicitly specify the name of the variable and assign to it, for example: ``foo(name='test')``. Due to this support, some functions in the library were changed to force things to take said keyword arguments. This is to reduce errors of knowing the argument order and the issues that could arise from them."
+msgstr "Od wersji Pythona 3.0 wzwyż możliwe jest wymuszanie używania argumentów nazwanych (keyword arguments). Argument nazwany to taki, w którym jawnie podajesz nazwę zmiennej, np. ``foo(name='test')``. W związku z tym niektóre funkcje w bibliotece zostały zmienione tak, aby wymagały użycia argumentów nazwanych. Ma to na celu ograniczenie błędów wynikających z mylenia kolejności argumentów."
+
+#: ../../migrating_to_async.rst:254
+msgid "The following parameters are now exclusively keyword arguments:"
+msgstr ""
+
+#: ../../migrating_to_async.rst:256
+msgid ":meth:`Client.send_message`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:257
+msgid "``tts``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:259
+msgid ":meth:`Client.logs_from`"
+msgstr ""
+
+#: ../../migrating_to_async.rst:259
+msgid "``before``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:260
+msgid "``after``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:262
+msgid "``allow``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:263
+msgid "``deny``"
+msgstr ""
+
+#: ../../migrating_to_async.rst:265
+msgid "In the documentation you can tell if a function parameter is a forced keyword argument if it is after ``\\*,`` in the function signature."
+msgstr "W dokumentacji rozpoznasz wymuszony argument nazwany po tym, że znajduje się po znaku ``\\*,`` w sygnaturze funkcji."
+
+#: ../../migrating_to_async.rst:271
+msgid "Running the Client"
+msgstr "Uruchamianie klienta"
+
+#: ../../migrating_to_async.rst:273
+msgid "In earlier versions of discord.py, ``client.run()`` was a blocking call to the main thread that called it. In v0.10.0 it is still a blocking call but it handles the event loop for you. However, in order to do that you must pass in your credentials to :meth:`Client.run`."
+msgstr "We wcześniejszych wersjach discord.py, ``client.run()`` było wywołaniem blokującym główny wątek, który je wywołał. W wersji 0.10.0 nadal jest to wywołanie blokujące, ale obsługuje ono pętlę zdarzeń (event loop) za Ciebie. Aby to było możliwe, musisz teraz przekazać dane logowania do metody :meth:`Client.run`."
+
+#: ../../migrating_to_async.rst:277
+msgid "Basically, before:"
+msgstr "Zasadniczo, wcześniej:"
+
+#: ../../migrating_to_async.rst:292
+msgid "Like in the older ``Client.run`` function, the newer one must be the one of the last functions to call. This is because the function is **blocking**. Registering events or doing anything after :meth:`Client.run` will not execute until the function returns."
+msgstr "Podobnie jak starsza wersja ``Client.run``, nowa musi być jedną z ostatnich wywoływanych funkcji. Dzieje się tak dlatego, że funkcja jest **blokująca**. Rejestrowanie zdarzeń lub wykonywanie jakichkolwiek czynności po wywołaniu :meth:`Client.run` nie dojdzie do skutku, dopóki funkcja nie zakończy działania."
+
+#: ../../migrating_to_async.rst:297
+msgid "This is a utility function that abstracts the event loop for you. There's no need for the run call to be blocking and out of your control. Indeed, if you want control of the event loop then doing so is quite straightforward:"
+msgstr "To funkcja pomocnicza, która abstrahuje pętlę zdarzeń za Ciebie. Nie ma potrzeby, aby wywołanie run było blokujące i poza Twoją kontrolą. Jeśli jednak chcesz sam kontrolować pętlę zdarzeń, jest to całkiem proste:"
+

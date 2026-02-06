@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: discordpy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-26 03:41+0000\n"
+"PO-Revision-Date: 2026-02-06 15:18\n"
+"Last-Translator: Antigravity\n"
+"Language-Team: Polish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Crowdin-Project: discordpy\n"
+"X-Crowdin-Project-ID: 362783\n"
+"X-Crowdin-Language: pl\n"
+"X-Crowdin-File: logging.pot\n"
+"X-Crowdin-File-ID: 84\n"
+"Language: pl_PL\n"
+
+#: ../../logging.rst:8
+msgid "Setting Up Logging"
+msgstr "Konfiguracja logowania"
+
+#: ../../logging.rst:10
+msgid "*discord.py* logs errors and debug information via the :mod:`logging` python module. In order to streamline this process, the library provides default configuration for the ``discord`` logger when using :meth:`Client.run`. It is strongly recommended that the logging module is configured, as no errors or warnings will be output if it is not set up."
+msgstr "*discord.py* loguje błędy i informacje debugowania za pomocą modułu :mod:`logging` Pythona. Aby usprawnić ten proces, biblioteka dostarcza domyślną konfigurację dla loggera „discord” przy użyciu metody :meth:`Client.run`. Zdecydowanie zaleca się skonfigurowanie modułu logowania, ponieważ w przeciwnym razie błędy i ostrzeżenia nie będą wyświetlane."
+
+#: ../../logging.rst:13
+msgid "The default logging configuration provided by the library will print to :data:`sys.stderr` using coloured output. You can configure it to send to a file instead by using one of the built-in :mod:`logging.handlers`, such as :class:`logging.FileHandler`."
+msgstr "Domyślna konfiguracja logowania dostarczana przez bibliotekę wypisuje dane do :data:`sys.stderr` przy użyciu kolorowego wyjścia. Możesz skonfigurować go do przesyłania danych do pliku, używając jednego z wbudowanych handlerów modułu :mod:`logging.handlers`, np. :class:`logging.FileHandler`."
+
+#: ../../logging.rst:15
+msgid "This can be done by passing it through :meth:`Client.run`:"
+msgstr "Można to zrobić, przekazując handler do :meth:`Client.run`:"
+
+#: ../../logging.rst:26
+msgid "You can also disable the library's logging configuration completely by passing ``None``:"
+msgstr "Możesz również całkowicie wyłączyć domyślną konfigurację logowania biblioteki, przekazując ``None``:"
+
+#: ../../logging.rst:33
+msgid "Likewise, configuring the log level to ``logging.DEBUG`` is also possible:"
+msgstr "Możliwe jest również skonfigurowanie poziomu logowania na ``logging.DEBUG``:"
+
+#: ../../logging.rst:44
+msgid "This is recommended, especially at verbose levels such as ``DEBUG``, as there are a lot of events logged and it would clog the stderr of your program."
+msgstr "Jest to zalecane, szczególnie przy wysokich poziomach szczegółowości jak ``DEBUG``, ponieważ logowanych jest wiele zdarzeń, które mogłyby zaśmiecić wyjście błędu (stderr) Twojego programu."
+
+#: ../../logging.rst:46
+msgid "If you want the logging configuration the library provides to affect all loggers rather than just the ``discord`` logger, you can pass ``root_logger=True`` inside :meth:`Client.run`:"
+msgstr "Jeśli chcesz, aby konfiguracja dostarczana przez bibliotekę wpływała na wszystkie loggery, a nie tylko na logger „discord”, możesz przekazać ``root_logger=True`` do :meth:`Client.run`:"
+
+#: ../../logging.rst:52
+msgid "If you want to setup logging using the library provided configuration without using :meth:`Client.run`, you can use :func:`discord.utils.setup_logging`:"
+msgstr "Jeśli chcesz skonfigurować logowanie przy użyciu ustawień biblioteki bez korzystania z :meth:`Client.run`, możesz użyć funkcji :func:`discord.utils.setup_logging`:"
+
+#: ../../logging.rst:63
+msgid "More advanced setups are possible with the :mod:`logging` module. The example below configures a rotating file handler that outputs DEBUG output for everything the library outputs, except for HTTP requests:"
+msgstr "Bardziej zaawansowane konfiguracje są możliwe dzięki modułowi :mod:`logging`. Poniższy przykład konfiguruje rotacyjny handler plików, który zapisuje dane debugowania (DEBUG) dla wszystkiego, co wypisuje biblioteka, z wyjątkiem zapytań HTTP:"
+
+#: ../../logging.rst:91
+msgid "For more information, check the documentation and tutorial of the :mod:`logging` module."
+msgstr "Więcej informacji znajdziesz w dokumentacji i samouczku modułu :mod:`logging`."
+
+#: ../../logging.rst:95
+msgid "The library now provides a default logging configuration."
+msgstr "Biblioteka zapewnia teraz domyślną konfigurację logowania."

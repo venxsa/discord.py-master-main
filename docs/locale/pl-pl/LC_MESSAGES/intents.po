@@ -1,0 +1,318 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: discordpy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-21 01:17+0000\n"
+"PO-Revision-Date: 2026-02-06 15:15\n"
+"Last-Translator: Antigravity\n"
+"Language-Team: Polish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Crowdin-Project: discordpy\n"
+"X-Crowdin-Project-ID: 362783\n"
+"X-Crowdin-Language: pl\n"
+"X-Crowdin-File: intents.pot\n"
+"X-Crowdin-File-ID: 86\n"
+"Language: pl_PL\n"
+
+#: ../../intents.rst:8
+msgid "A Primer to Gateway Intents"
+msgstr "Wprowadzenie do Gateway Intents"
+
+#: ../../intents.rst:10
+msgid "In version 1.5 comes the introduction of :class:`Intents`. This is a radical change in how bots are written. An intent basically allows a bot to subscribe to specific buckets of events. The events that correspond to each intent is documented in the individual attribute of the :class:`Intents` documentation."
+msgstr "W wersji 1.5 wprowadzono :class:`Intents` (intencje). Jest to radykalna zmiana w sposobie pisania botów. Intencja zasadniczo pozwala botowi subskrybować określone grupy zdarzeń. Zdarzenia odpowiadające każdej intencji są udokumentowane w poszczególnych atrybutach dokumentacji klasy :class:`Intents`."
+
+#: ../../intents.rst:12
+msgid "These intents are passed to the constructor of :class:`Client` or its subclasses (:class:`AutoShardedClient`, :class:`~.AutoShardedBot`, :class:`~.Bot`) with the ``intents`` argument."
+msgstr "Intencje te są przekazywane do konstruktora klasy :class:`Client` lub jej podklas (:class:`AutoShardedClient`, :class:`~.AutoShardedBot`, :class:`~.Bot`) za pomocą argumentu ``intents``."
+
+#: ../../intents.rst:15
+msgid "What intents are needed?"
+msgstr "Które intencje są potrzebne?"
+
+#: ../../intents.rst:17
+msgid "The intents that are necessary for your bot can only be dictated by yourself. Each attribute in the :class:`Intents` class documents what :ref:`events <discord-api-events>` it corresponds to and what kind of cache it enables."
+msgstr "O tym, jakie intencje są niezbędne dla Twojego bota, decydujesz Ty sam. Każdy atrybut w klasie :class:`Intents` opisuje, jakim :ref:`zdarzeniom <discord-api-events>` odpowiada oraz jaki rodzaj pamięci podręcznej (cache) aktywuje."
+
+#: ../../intents.rst:19
+msgid "For example, if you want a bot that functions without spammy events like presences or typing then we could do the following:"
+msgstr "Na przykład, jeśli chcesz, aby bot działał bez „spamujących” zdarzeń, takich jak statusy obecności (presences) czy informacja o pisaniu (typing), możesz zrobić to tak:"
+
+#: ../../intents.rst:35
+msgid "Note that this doesn't enable :attr:`Intents.members` since it's a privileged intent."
+msgstr "Zauważ, że nie włącza to :attr:`Intents.members`, ponieważ jest to intencja uprzywilejowana."
+
+#: ../../intents.rst:37
+msgid "Another example showing a bot that only deals with messages and guild information:"
+msgstr "Inny przykład pokazujący bota, który obsługuje tylko wiadomości i informacje o serwerach (gildiach):"
+
+#: ../../intents.rst:56
+msgid "Privileged Intents"
+msgstr "Uprzywilejowane intencje"
+
+#: ../../intents.rst:58
+msgid "With the API change requiring bot authors to specify intents, some intents were restricted further and require more manual steps. These intents are called **privileged intents**."
+msgstr "Wraz ze zmianą API wymagającą od autorów botów określenia intencji, niektóre z nich zostały dodatkowo ograniczone i wymagają wykonania ręcznych kroków. Są to tak zwane **uprzywilejowane intencje** (privileged intents)."
+
+#: ../../intents.rst:60
+msgid "A privileged intent is one that requires you to go to the developer portal and manually enable it. To enable privileged intents do the following:"
+msgstr "Uprzywilejowana intencja wymaga przejścia do portalu deweloperskiego i jej ręcznego aktywowania. Aby włączyć uprzywilejowane intencje, wykonaj następujące kroki:"
+
+#: ../../intents.rst:62
+msgid "Make sure you're logged on to the `Discord website <https://discord.com>`_."
+msgstr "Upewnij się, że jesteś zalogowany na `stronie Discord <https://discord.com>`_."
+
+#: ../../intents.rst:63
+msgid "Navigate to the `application page <https://discord.com/developers/applications>`_."
+msgstr "Przejdź do `strony aplikacji <https://discord.com/developers/applications>`_."
+
+#: ../../intents.rst:64
+msgid "Click on the bot you want to enable privileged intents for."
+msgstr "Kliknij bota, dla którego chcesz włączyć uprzywilejowane intencje."
+
+#: ../../intents.rst:65
+msgid "Navigate to the bot tab on the left side of the screen."
+msgstr "Przejdź do zakładki „Bot” po lewej stronie ekranu."
+
+#: ../../intents.rst:0
+msgid "The bot tab in the application page."
+msgstr "Zakładka bota na stronie aplikacji."
+
+#: ../../intents.rst:70
+msgid "Scroll down to the \"Privileged Gateway Intents\" section and enable the ones you want."
+msgstr "Przewiń w dół do sekcji „Privileged Gateway Intents” i włącz te intencje, których potrzebujesz."
+
+#: ../../intents.rst:0
+msgid "The privileged gateway intents selector."
+msgstr "Selektor uprzywilejowanych intencji gatewaya."
+
+#: ../../intents.rst:77
+msgid "Enabling privileged intents when your bot is in over 100 guilds requires going through `bot verification <https://support.discord.com/hc/en-us/articles/360040720412>`_. If your bot is already verified and you would like to enable a privileged intent you must go through `Discord support <https://dis.gd/contact>`_ and talk to them about it."
+msgstr "Włączenie uprzywilejowanych intencji, gdy bot znajduje się na ponad 100 serwerach, wymaga przejścia procesu `weryfikacji bota <https://support.discord.com/hc/en-us/articles/360040720412>`_. Jeśli Twój bot jest już zweryfikowany i chcesz włączyć uprzywilejowaną intencję, musisz skontaktować się z `pomocą techniczną Discorda <https://dis.gd/contact>`_."
+
+#: ../../intents.rst:81
+msgid "Even if you enable intents through the developer portal, you still have to enable the intents through code as well."
+msgstr "Nawet jeśli włączysz intencje w portalu deweloperskim, musisz je również aktywować w kodzie bota."
+
+#: ../../intents.rst:85
+msgid "Do I need privileged intents?"
+msgstr "Czy potrzebuję uprzywilejowanych intencji?"
+
+#: ../../intents.rst:87
+msgid "This is a quick checklist to see if you need specific privileged intents."
+msgstr "Oto krótka lista sprawdzająca, czy potrzebujesz konkretnych uprzywilejowanych intencji."
+
+#: ../../intents.rst:92
+msgid "Presence Intent"
+msgstr "Intencja obecności (Presence Intent)"
+
+#: ../../intents.rst:94
+msgid "Whether you use :attr:`Member.status` at all to track member statuses."
+msgstr "Czy używasz :attr:`Member.status` do śledzenia statusów członków."
+
+#: ../../intents.rst:95
+msgid "Whether you use :attr:`Member.activity` or :attr:`Member.activities` to check member's activities."
+msgstr "Czy używasz :attr:`Member.activity` lub :attr:`Member.activities` do sprawdzania aktywności członków."
+
+#: ../../intents.rst:100
+msgid "Member Intent"
+msgstr "Intencja członków (Member Intent)"
+
+#: ../../intents.rst:102
+msgid "Whether you track member joins or member leaves, corresponds to :func:`on_member_join` and :func:`on_member_remove` events."
+msgstr "Czy śledzisz dołączanie lub opuszczanie serwera przez członków; odpowiada zdarzeniom :func:`on_member_join` oraz :func:`on_member_remove`."
+
+#: ../../intents.rst:103
+msgid "Whether you want to track member updates such as nickname or role changes."
+msgstr "Czy chcesz śledzić aktualizacje danych członków, takie jak zmiana pseudonimu lub ról."
+
+#: ../../intents.rst:104
+msgid "Whether you want to track user updates such as usernames, avatars, discriminators, etc."
+msgstr "Czy chcesz śledzić aktualizacje użytkowników, takie jak nazwy użytkownika, awatary, dyskryminatory itp."
+
+#: ../../intents.rst:105
+msgid "Whether you want to request the guild member list through :meth:`Guild.chunk` or :meth:`Guild.fetch_members`."
+msgstr "Czy chcesz żądać listy członków serwera poprzez :meth:`Guild.chunk` lub :meth:`Guild.fetch_members`."
+
+#: ../../intents.rst:106
+msgid "Whether you want high accuracy member cache under :attr:`Guild.members`."
+msgstr "Czy potrzebujesz wysokiej dokładności pamięci podręcznej członków w :attr:`Guild.members`."
+
+#: ../../intents.rst:111
+msgid "Message Content"
+msgstr "Treść wiadomości (Message Content)"
+
+#: ../../intents.rst:113
+msgid "Whether you use :attr:`Message.content` to check message content."
+msgstr "Czy używasz :attr:`Message.content` do sprawdzania treści wiadomości."
+
+#: ../../intents.rst:114
+msgid "Whether you use :attr:`Message.attachments` to check message attachments."
+msgstr "Czy używasz :attr:`Message.attachments` do sprawdzania załączników wiadomości."
+
+#: ../../intents.rst:115
+msgid "Whether you use :attr:`Message.embeds` to check message embeds."
+msgstr "Czy używasz :attr:`Message.embeds` do sprawdzania embedów wiadomości."
+
+#: ../../intents.rst:116
+msgid "Whether you use :attr:`Message.components` to check message components."
+msgstr "Czy używasz :attr:`Message.components` do sprawdzania komponentów wiadomości."
+
+#: ../../intents.rst:117
+msgid "Whether you use the commands extension with a non-mentioning prefix."
+msgstr "Czy używasz rozszerzenia poleceń z prefiksem nierozpoczynającym się od wzmianki (mention)."
+
+#: ../../intents.rst:122
+msgid "Member Cache"
+msgstr "Cache członków"
+
+#: ../../intents.rst:124
+msgid "Along with intents, Discord now further restricts the ability to cache members and expects bot authors to cache as little as is necessary. However, to properly maintain a cache the :attr:`Intents.members` intent is required in order to track the members who left and properly evict them."
+msgstr "Wraz z intencjami, Discord jeszcze bardziej ogranicza możliwość cache'owania członków i oczekuje, że autorzy botów będą przechowywać tylko niezbędne dane. Jednak aby poprawnie utrzymać cache, wymagana jest intencja :attr:`Intents.members`, by śledzić członków opuszczających serwer i usuwać ich z pamięci."
+
+#: ../../intents.rst:126
+msgid "To aid with member cache where we don't need members to be cached, the library now has a :class:`MemberCacheFlags` flag to control the member cache. The documentation page for the class goes over the specific policies that are possible."
+msgstr "Aby pomóc w zarządzaniu pamięcią podręczną tam, gdzie nie potrzebujemy cache'owania wszystkich członków, biblioteka oferuje flagę :class:`MemberCacheFlags`. Dokumentacja tej klasy opisuje dostępne polityki przechowywania danych."
+
+#: ../../intents.rst:128
+msgid "It should be noted that certain things do not need a member cache since Discord will provide full member information if possible. For example:"
+msgstr "Warto zauważyć, że niektóre funkcje nie wymagają cache'owania członków, ponieważ Discord dostarcza pełne informacje o członku, jeśli to możliwe. Na przykład:"
+
+#: ../../intents.rst:130
+msgid ":func:`on_message` will have :attr:`Message.author` be a member even if cache is disabled."
+msgstr "W :func:`on_message`, :attr:`Message.author` będzie członkiem (Member), nawet jeśli cache jest wyłączony."
+
+#: ../../intents.rst:131
+msgid ":func:`on_voice_state_update` will have the ``member`` parameter be a member even if cache is disabled."
+msgstr "W :func:`on_voice_state_update`, parametr ``member`` będzie członkiem, nawet jeśli cache jest wyłączony."
+
+#: ../../intents.rst:132
+msgid ":func:`on_reaction_add` will have the ``user`` parameter be a member when in a guild even if cache is disabled."
+msgstr "W :func:`on_reaction_add`, parametr ``user`` będzie członkiem (w obrębie serwera), nawet jeśli cache jest wyłączony."
+
+#: ../../intents.rst:133
+msgid ":func:`on_raw_reaction_add` will have :attr:`RawReactionActionEvent.member` be a member when in a guild even if cache is disabled."
+msgstr "W :func:`on_raw_reaction_add`, :attr:`RawReactionActionEvent.member` będzie członkiem (w obrębie serwera), nawet jeśli cache jest wyłączony."
+
+#: ../../intents.rst:134
+msgid "The reaction add events do not contain additional information when in direct messages. This is a Discord limitation."
+msgstr "Zdarzenia dodania reakcji nie zawierają dodatkowych informacji w wiadomościach prywatnych. Jest to ograniczenie Discorda."
+
+#: ../../intents.rst:135
+msgid "The reaction removal events do not have member information. This is a Discord limitation."
+msgstr "Zdarzenia usunięcia reakcji nie zawierają informacji o członku. Jest to ograniczenie Discorda."
+
+#: ../../intents.rst:137
+msgid "Other events that take a :class:`Member` will require the use of the member cache. If absolute accuracy over the member cache is desirable, then it is advisable to have the :attr:`Intents.members` intent enabled."
+msgstr "Inne zdarzenia przyjmujące obiekt :class:`Member` będą wymagały użycia cache'u członków. Jeśli pożądana jest pełna dokładność pamięci podręcznej, zaleca się włączenie intencji :attr:`Intents.members`."
+
+#: ../../intents.rst:142
+msgid "Retrieving Members"
+msgstr "Pobieranie członków"
+
+#: ../../intents.rst:144
+msgid "If the cache is disabled or you disable chunking guilds at startup, we might still need a way to load members. The library offers a few ways to do this:"
+msgstr "Jeśli cache jest wyłączony lub wyłączysz „chunking” serwerów przy starcie, nadal możesz potrzebować sposobu na załadowanie członków. Biblioteka oferuje kilka metod:"
+
+#: ../../intents.rst:148
+msgid ":meth:`Guild.query_members`"
+msgstr ":meth:`Guild.query_members`"
+
+#: ../../intents.rst:147
+msgid "Used to query members by a prefix matching nickname or username."
+msgstr "Służy do wyszukiwania członków po prefiksie pasującym do pseudonimu lub nazwy użytkownika."
+
+#: ../../intents.rst:148
+msgid "This can also be used to query members by their user ID."
+msgstr "Może być również użyte do wyszukiwania członków po ich ID użytkownika."
+
+#: ../../intents.rst:149
+msgid "This uses the gateway and not the HTTP."
+msgstr "Korzysta z bramy (gateway), a nie z protokołu HTTP."
+
+#: ../../intents.rst:150
+msgid ":meth:`Guild.chunk`"
+msgstr ":meth:`Guild.chunk`"
+
+#: ../../intents.rst:151
+msgid "This can be used to fetch the entire member list through the gateway."
+msgstr "Można tego użyć do pobrania całej listy członków poprzez gateway."
+
+#: ../../intents.rst:152
+msgid ":meth:`Guild.fetch_member`"
+msgstr ":meth:`Guild.fetch_member`"
+
+#: ../../intents.rst:153
+msgid "Used to fetch a member by ID through the HTTP API."
+msgstr "Służy do pobierania członka po ID poprzez API HTTP."
+
+#: ../../intents.rst:155
+msgid ":meth:`Guild.fetch_members`"
+msgstr ":meth:`Guild.fetch_members`"
+
+#: ../../intents.rst:155
+msgid "used to fetch a large number of members through the HTTP API."
+msgstr "Służy do pobierania dużej liczby członków poprzez API HTTP."
+
+#: ../../intents.rst:157
+msgid "It should be noted that the gateway has a strict rate limit of 120 requests per 60 seconds."
+msgstr "Należy pamiętać, że gateway ma rygorystyczny limit (rate limit) wynoszący 120 żądań na 60 sekund."
+
+#: ../../intents.rst:160
+msgid "Troubleshooting"
+msgstr "Rozwiązywanie problemów"
+
+#: ../../intents.rst:162
+msgid "Some common issues relating to the mandatory intent change."
+msgstr "Kilka typowych problemów związanych z obowiązkową zmianą intencji."
+
+#: ../../intents.rst:165
+msgid "Where'd my members go?"
+msgstr "Gdzie podziali się moi członkowie?"
+
+#: ../../intents.rst:167
+msgid "Due to an :ref:`API change <intents_member_cache>` Discord is now forcing developers who want member caching to explicitly opt-in to it. This is a Discord mandated change and there is no way to bypass it. In order to get members back you have to explicitly enable the :ref:`members privileged intent <privileged_intents>` and change the :attr:`Intents.members` attribute to true."
+msgstr "Z powodu :ref:`zmiany API <intents_member_cache>`, Discord zmusza teraz deweloperów chcących korzystać z cache'owania członków do jawnego wyrażenia na to zgody. Jest to zmiana odgórna i nie da się jej obejść. Aby odzyskać dostęp do członków, musisz jawnie włączyć :ref:`uprzywilejowaną intencję members <privileged_intents>` (intencję członków) i ustawić atrybut :attr:`Intents.members` na „True”."
+
+#: ../../intents.rst:169
+msgid "For example:"
+msgstr "Na przykład:"
+
+#: ../../intents.rst:185
+msgid "Why does ``on_ready`` take so long to fire?"
+msgstr "Dlaczego ``on_ready`` uruchamia się tak długo?"
+
+#: ../../intents.rst:187
+msgid "As part of the API change regarding intents, Discord also changed how members are loaded in the beginning. Originally the library could request 75 guilds at once and only request members from guilds that have the :attr:`Guild.large` attribute set to ``True``. With the new intent changes, Discord mandates that we can only send 1 guild per request. This causes a 75x slowdown which is further compounded by the fact that *all* guilds, not just large guilds are being requested."
+msgstr "W ramach zmiany API dotyczącej intencji, Discord zmienił również sposób wstępnego ładowania członków. Pierwotnie biblioteka mogła żądać danych dla 75 serwerów naraz i pobierać członków tylko z serwerów oznaczonych atrybutem :attr:`Guild.large` jako „True”. Przy nowych intencjach Discord wymaga, byśmy wysyłali tylko 1 serwer na żądanie. Powoduje to 75-krotne spowolnienie, które jest pogłębiane przez fakt, że pobierani są członkowi ze *wszystkich* serwerów, a nie tylko tych dużych."
+
+#: ../../intents.rst:189
+msgid "There are a few solutions to fix this."
+msgstr "Istnieje kilka rozwiązań tego problemu."
+
+#: ../../intents.rst:191
+msgid "The first solution is to request the privileged presences intent along with the privileged members intent and enable both of them. This allows the initial member list to contain online members just like the old gateway. Note that we're still limited to 1 guild per request but the number of guilds we request is significantly reduced."
+msgstr "Pierwszym rozwiązaniem jest poproszenie o uprzywilejowaną intencję obecności (presences) wraz z uprzywilejowaną intencją członków (members) i włączenie obu. Pozwala to na zawarcie online'owych członków na wstępnej liście, podobnie jak w starym gatewayu. Pamiętaj, że nadal ograniczają nas żądania po 1 serwerze, ale liczba serwerów, o które musimy pytać, jest znacznie mniejsza."
+
+#: ../../intents.rst:193
+msgid "The second solution is to disable member chunking by setting ``chunk_guilds_at_startup`` to ``False`` when constructing a client. Then, when chunking for a guild is necessary you can use the various techniques to :ref:`retrieve members <retrieving_members>`."
+msgstr "Drugim rozwiązaniem jest wyłączenie chunkingu członków poprzez ustawienie ``chunk_guilds_at_startup`` na ``False`` podczas tworzenia klienta. Gdy zajdzie potrzeba pobrania członków danej gildii, możesz skorzystać z różnych technik :ref:`pobierania członków <retrieving_members>`."
+
+#: ../../intents.rst:195
+msgid "To illustrate the slowdown caused by the API change, take a bot who is in 840 guilds and 95 of these guilds are \"large\" (over 250 members)."
+msgstr "Aby zilustrować spowolnienie spowodowane zmianą API: weźmy bota, który jest na 840 serwerach, z czego 95 to serwery „duże” (powyżej 250 członków)."
+
+#: ../../intents.rst:197
+msgid "Under the original system this would result in 2 requests to fetch the member list (75 guilds, 20 guilds) roughly taking 60 seconds. With :attr:`Intents.members` but not :attr:`Intents.presences` this requires 840 requests, with a rate limit of 120 requests per 60 seconds means that due to waiting for the rate limit it totals to around 7 minutes of waiting for the rate limit to fetch all the members. With both :attr:`Intents.members` and :attr:`Intents.presences` we mostly get the old behaviour so we're only required to request for the 95 guilds that are large, this is slightly less than our rate limit so it's close to the original timing to fetch the member list."
+msgstr "W oryginalnym systemie skutkowałoby to 2 żądaniami pobrania listy członków (75 serwerów, 20 serwerów), co zajmowało ok. 60 sekund. Przy włączonym :attr:`Intents.members`, ale wyłączonym :attr:`Intents.presences`, wymaga to 840 żądań. Przy limicie 120 żądań na 60 sekund, samo czekanie na odblokowanie limitu sumuje się do około 7 minut oczekiwania na pobranie wszystkich członków. Mając włączone obie intencje (:attr:`Intents.members` i :attr:`Intents.presences`), powracamy do zachowania zbliżonego do starego – musimy pytać tylko o 95 dużych serwerów, co mieści się w naszym rate limicie i czas pobierania jest bliski pierwotnemu."
+
+#: ../../intents.rst:199
+msgid "Unfortunately due to this change being required from Discord there is nothing that the library can do to mitigate this."
+msgstr "Niestety, ponieważ zmiana ta jest wymagana odgórnie przez Discorda, biblioteka nie może nic zrobić, aby ją złagodzić."
+
+#: ../../intents.rst:201
+msgid "If you truly dislike the direction Discord is going with their API, you can contact them via `support <https://dis.gd/contact>`_."
+msgstr "Jeśli naprawdę nie podoba Ci się kierunek, w którym zmierza API Discorda, możesz skontaktować się z nimi poprzez `dział pomocy <https://dis.gd/contact>`_."

@@ -1,0 +1,27 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: discordpy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-21 01:17+0000\n"
+"PO-Revision-Date: 2023-06-21 01:20\n"
+"Last-Translator: \n"
+"Language-Team: Polish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Crowdin-Project: discordpy\n"
+"X-Crowdin-Project-ID: 362783\n"
+"X-Crowdin-Language: pl\n"
+"X-Crowdin-File: /ext/commands/index.pot\n"
+"X-Crowdin-File-ID: 66\n"
+"Language: pl_PL\n"
+
+#: ../../ext/commands/index.rst:4
+msgid "``discord.ext.commands`` -- Bot commands framework"
+msgstr "``discord.ext.commands`` -- Szkielet komend bota (Bot commands framework)"
+
+#: ../../ext/commands/index.rst:6
+msgid "``discord.py`` offers a lower level aspect on interacting with Discord. Often times, the library is used for the creation of bots. However this task can be daunting and confusing to get correctly the first time. Many times there comes a repetition in creating a bot command framework that is extensible, flexible, and powerful. For this reason, ``discord.py`` comes with an extension library that handles this for you."
+msgstr "``discord.py`` oferuje niskopoziomowe podejście do interakcji z Discordem. Często biblioteka ta jest wykorzystywana do tworzenia botów. Jednak zadanie to może być zniechęcające i mylące przy pierwszej próbie poprawnego wykonania. Wielokrotnie dochodzi do powtarzania tych samych czynności przy tworzeniu frameworka komend bota, który ma być rozszerzalny, elastyczny i potężny. Z tego powodu ``discord.py`` posiada bibliotekę rozszerzeń, która zajmuje się tym za Ciebie."
+

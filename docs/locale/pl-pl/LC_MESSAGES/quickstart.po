@@ -1,0 +1,90 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: discordpy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-21 01:17+0000\n"
+"PO-Revision-Date: 2026-02-06 15:07\n"
+"Last-Translator: Antigravity\n"
+"Language-Team: Polish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Crowdin-Project: discordpy\n"
+"X-Crowdin-Project-ID: 362783\n"
+"X-Crowdin-Language: pl\n"
+"X-Crowdin-File: quickstart.pot\n"
+"X-Crowdin-File-ID: 50\n"
+"Language: pl_PL\n"
+
+#: ../../quickstart.rst:8
+msgid "Quickstart"
+msgstr "Szybki start"
+
+#: ../../quickstart.rst:10
+msgid "This page gives a brief introduction to the library. It assumes you have the library installed, if you don't check the :ref:`installing` portion."
+msgstr "Ta strona zawiera krótkie wprowadzenie do biblioteki. Zakłada ona, że masz już zainstalowaną bibliotekę; jeśli nie, sprawdź sekcję :ref:`installing`."
+
+#: ../../quickstart.rst:14
+msgid "A Minimal Bot"
+msgstr "Minimalny Bot"
+
+#: ../../quickstart.rst:16
+msgid "Let's make a bot that responds to a specific message and walk you through it."
+msgstr "Stwórzmy bota, który odpowiada na konkretną wiadomość, i przeanalizujmy jego działanie."
+
+#: ../../quickstart.rst:18
+msgid "It looks something like this:"
+msgstr "Wygląda to mniej więcej tak:"
+
+#: ../../quickstart.rst:45
+msgid "Let's name this file ``example_bot.py``. Make sure not to name it ``discord.py`` as that'll conflict with the library."
+msgstr "Nazwijmy ten plik ``example_bot.py``. Upewnij się, że nie nazwiesz go ``discord.py``, ponieważ spowoduje to konflikt z biblioteką."
+
+#: ../../quickstart.rst:48
+msgid "There's a lot going on here, so let's walk you through it step by step."
+msgstr "Dzieje się tutaj całkiem sporo, więc przejdźmy przez to krok po kroku."
+
+#: ../../quickstart.rst:50
+msgid "The first line just imports the library, if this raises a :exc:`ModuleNotFoundError` or :exc:`ImportError` then head on over to :ref:`installing` section to properly install."
+msgstr "Pierwsza linia po prostu importuje bibliotekę; jeśli spowoduje to błąd :exc:`ModuleNotFoundError` lub :exc:`ImportError`, przejdź do sekcji :ref:`installing`, aby poprawnie ją zainstalować."
+
+#: ../../quickstart.rst:52
+msgid "Next, we create an instance of a :class:`Client`. This client is our connection to Discord."
+msgstr "Następnie tworzymy instancję klasy :class:`Client`. Ten klient jest naszym połączeniem z Discordem."
+
+#: ../../quickstart.rst:53
+msgid "We then use the :meth:`Client.event` decorator to register an event. This library has many events. Since this library is asynchronous, we do things in a \"callback\" style manner."
+msgstr "Następnie używamy dekoratora :meth:`Client.event`, aby zarejestrować zdarzenie. Ta biblioteka obsługuje wiele zdarzeń. Ponieważ biblioteka jest asynchroniczna, działamy w sposób oparty na funkcjach zwrotnych (tzw. „callbackach”)."
+
+#: ../../quickstart.rst:56
+msgid "A callback is essentially a function that is called when something happens. In our case, the :func:`on_ready` event is called when the bot has finished logging in and setting things up and the :func:`on_message` event is called when the bot has received a message."
+msgstr "Funkcja zwrotna to zasadniczo funkcja wywoływana, gdy coś się wydarzy. W naszym przypadku zdarzenie :func:`on_ready` jest wywoływane, gdy bot zakończy logowanie i konfigurację, a zdarzenie :func:`on_message` jest wywoływane, gdy bot otrzyma wiadomość."
+
+#: ../../quickstart.rst:59
+msgid "Since the :func:`on_message` event triggers for *every* message received, we have to make sure that we ignore messages from ourselves. We do this by checking if the :attr:`Message.author` is the same as the :attr:`Client.user`."
+msgstr "Ponieważ zdarzenie :func:`on_message` uruchamia się dla *każdej* otrzymanej wiadomości, musimy upewnić się, że ignorujemy wiadomości od nas samych. Robimy to, sprawdzając, czy :attr:`Message.author` jest taki sam jak :attr:`Client.user`."
+
+#: ../../quickstart.rst:62
+msgid "Afterwards, we check if the :class:`Message.content` starts with ``'$hello'``. If it does, then we send a message in the channel it was used in with ``'Hello!'``. This is a basic way of handling commands, which can be later automated with the :doc:`./ext/commands/index` framework."
+msgstr "Następnie sprawdzamy, czy :class:`Message.content` zaczyna się od ``'$hello'``. Jeśli tak, wysyłamy wiadomość o treści ``'Hello!'`` na kanale, na którym została użyta. Jest to podstawowy sposób obsługi poleceń, który można później zautomatyzować za pomocą szkieletu :doc:`./ext/commands/index`."
+
+#: ../../quickstart.rst:65
+msgid "Finally, we run the bot with our login token. If you need help getting your token or creating a bot, look in the :ref:`discord-intro` section."
+msgstr "Na koniec uruchamiamy bota za pomocą naszego tokena logowania. Jeśli potrzebujesz pomocy w uzyskaniu tokena lub utworzeniu bota, zajrzyj do sekcji :ref:`discord-intro`."
+
+#: ../../quickstart.rst:69
+msgid "Now that we've made a bot, we have to *run* the bot. Luckily, this is simple since this is just a Python script, we can run it directly."
+msgstr "Skoro już stworzyliśmy bota, musimy go *uruchomić*. Na szczęście jest to proste – ponieważ jest to zwykły skrypt Pythona, możemy uruchomić go bezpośrednio."
+
+#: ../../quickstart.rst:72
+msgid "On Windows:"
+msgstr "W systemie Windows:"
+
+#: ../../quickstart.rst:78
+msgid "On other systems:"
+msgstr "W innych systemach:"
+
+#: ../../quickstart.rst:84
+msgid "Now you can try playing around with your basic bot."
+msgstr "Teraz możesz spróbować poeksperymentować ze swoim podstawowym botem."
